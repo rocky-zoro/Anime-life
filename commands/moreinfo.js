@@ -8,8 +8,8 @@ module.exports = {
     name:'moreinfo',
     description:'search your anime',
     async execute(client, message, args, Discord){
-        let googlekey = "AIzaSyA6ubVPSjTFguKFGZHySQ3J-eYth5hP4ho";
-        let id = "294d6c90688cd8f4c"; // search engine id
+        let googlekey = process.env.googleid;
+        let id = process.env.searchid; // search engine id
         let query = args.join(" ");
         let href;
 

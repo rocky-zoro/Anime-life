@@ -42,11 +42,11 @@ module.exports = {
             },
             {
                 name:"?addmanga-`?am`",
-                value:"To add a manga in your manga list\n`E.g.-?am One Piece`"
+                value:"To add a manga in your manga list\nE.g.-`?am One Piece`"
             },
             {
                 name:"?removemanga-`?rm`",
-                value:"To remove a manga from your manga-list\n`E.g.-?rm One Piece`"
+                value:"To remove a manga from your manga-list\nE.g.-`?rm One Piece`"
             },
             {
                 name:"?removeallmanga-`?ram`, `?removemangaall`",
@@ -57,8 +57,8 @@ module.exports = {
                 value:"You can use these commands to look up information on any anime or manga you're interested in."
             },
             {
-                name:"?search-`?s`",
-                value:"It will fetch a link for you so that you can info about your anime.\n`E.g.-?s Naruto`"
+                name:"?search, ?searchmanga-`?s`, `?ms`",
+                value:"It will fetch a link for you so that you can info about your anime.\nFor Anime E.g.-`?s Naruto`\nFor Manga E.g.-`?sm`"
             }
             
         )
