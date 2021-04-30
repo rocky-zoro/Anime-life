@@ -16,7 +16,7 @@ module.exports = {
         {
             "$group": {
                 _id : { uid : "$uid"},
-                uid:{$addToSet:"$_id"},
+                uids:{$addToSet:"$_id"},
                 count:{$sum: 1}
             }
 
@@ -31,9 +31,9 @@ module.exports = {
         }
     ]).forEach(function(doc){
 
-        doc.uid.shift();
+        doc.uids.shift();
         on.deleteMany({
-            _id:{$in : doc.uid}
+            _id:{$in : doc.uids}
         });
 
     })
