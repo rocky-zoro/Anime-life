@@ -34,7 +34,7 @@ module.exports = {
     
 
     message.channel.send(top160.map( function(el){return (`**${el.title}**`+"-"+`${el.uid}`)}),{split: true})
-    .catch(err => message.channel.send("Couldn't find results in database you can try ?search and ?moreinfo"))
+    .catch(err => message.channel.send("Couldn't find results in database you can try to correct your anime name or do ?search and ?moreinfo"))
     
     }
 

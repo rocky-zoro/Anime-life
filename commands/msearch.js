@@ -19,7 +19,7 @@ module.exports = {
         if(!href) return message.channel.send("You forgot to include the title of the manga, mate.\nE.g.-`?ms One Piece`");
 
         
-        message.channel.send(href.link +"\n For more info please use ?mmoreinfo ");
+        message.channel.send(href.link +"\n For more info please use ?mmoreinfo");
         
         async function search(query) {
 
