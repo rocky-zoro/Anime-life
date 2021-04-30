@@ -58,15 +58,12 @@ module.exports = {
             },
             {
                 name:"?search, ?searchmanga-`?s`, `?ms`",
-                value:"It will fetch a link for you so that you can info about your anime.\nFor Anime E.g.-`?s Naruto`\nFor Manga E.g.-`?sm`"
+                value:"It will fetch a link for you so that you can info about your anime.\nFor Anime E.g.-`?s Naruto`\nFor Manga E.g.-`?sm Naruto`"
             }
             
         )
-        .setFooter("Page 2/5 | Support us");                                                          //suggestion manga
-                                                                                        //sugestion anime
-                                                                                        //watchlist commands
-                                                                                        //info about bot
-                                                                                        //for support
+        .setFooter("Page 2/5 | Click on the react emoji for next page.");                                                          
+        
         const embed3 = new Discord.MessageEmbed()
         .setColor('#a6e764')
         .setTitle('**Search Commands**')
@@ -95,19 +92,19 @@ module.exports = {
                 value:"`?moreinfo` for top 5 results of your anime and `?mmoreinfo` for top 5 results of your manga."
             }
         )
-        .setFooter("Page 3/5 | Support us");
+        .setFooter("Page 3/5 | Click on the react emoji for next page.");
 
         const embed4 = new Discord.MessageEmbed()
         .setColor('#b3ea7a')
         .setTitle('Anime Suggestions Commands')
         .setDescription("I suggest using `?anime` and `?manga` to get detailed information about the suggestions commands.\n\nUse these commands to get your favourite **Genre**.\n\n?shounen-`?shonen`, `?zerotohero`\n?supernatural\n?sliceoflife-`?life`\n?romance\n?magic-`?fairytale`\n?adventure-`?action`\n?comedy-`?funny`\n?sports-`?fitness`\n?drama-`?crime`\n?fantasy-`?super-power`\n?horror-`?dementia`\n?physchological-`?truecrime`\n?mystery-`?suspense`, `?thriller`\n?sci-fi-`?mecha`,`?shounenai`\n?isekai-`?otherworld`,`?differentworld`")
-        .setFooter("Page 4/5 | Support us");
+        .setFooter("Page 4/5 | Click on the react emoji for next page.");
 
         const embed5 = new Discord.MessageEmbed()
         .setColor('#bfee90')
         .setTitle('Manga Suggestions Commands')
         .setDescription("I suggest using `?anime` and `?manga` to get detailed information about the suggestions commands.\n\nUse these commands to get your favourite **Genre**.\n\n?mshounen-`?mshonen`, `?mzerotohero`\n?msupernatural\n?msliceoflife-`?mrealism`\n?mromance\n?mmagic-`?mfairytale`\n?madventure-`?maction`\n?mcomedy-`?mfunny`\n?msports-`?mfitness`\n?mdrama-`?mcrime`\n?mfantasy-`?msuper-power`\n?mhorror-`?mdementia`\n?mphyschological-`?mtruecrime`\n?mmystery-`?msuspense`, `?mthriller`\n?msci-fi-`?mmecha`,`?mshounenai`\n?misekai-`?motherworld`,`?mdifferentworld`")
-        .setFooter("Page 5/5 | Support us");
+        .setFooter("Page 5/5 | Click on the react emoji for next page.");
 
         
         let pages = [embed, embed2, embed3, embed4, embed5]
@@ -182,3 +179,8 @@ module.exports = {
         })
     }
 }
+//suggestion manga
+//sugestion anime
+//watchlist commands
+//info about bot
+//for support
