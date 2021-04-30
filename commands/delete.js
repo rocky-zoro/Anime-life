@@ -37,6 +37,7 @@ module.exports = {
         });
 
     })
+    message.react('✔')
     }
 
 }
