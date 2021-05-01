@@ -13,7 +13,7 @@ module.exports = {
         let url = `https://g.tenor.com/v1/search?q=animekawaii&key=${process.env.tenorkey}&limit=8`;
         try {
             const { body } = await request.get(url);
-            console.log(body);
+            console.log(body.items);
         } catch (err) {
             console.error('not work');
         }
