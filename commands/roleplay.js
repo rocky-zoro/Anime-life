@@ -24,6 +24,7 @@ module.exports = {
             .setURL('https://discord.gg/adnga86cdA')
             .setImage(`${json.results[index].url}`)
             .setFooter('For more info use ?search,?dbf or ?moreinfo','https://imgur.com/22ncPbk.png')
+            message.channel.send(json.results[index].url)
             
             message.channel.send(newEmbed);
 
