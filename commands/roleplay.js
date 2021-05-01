@@ -13,7 +13,8 @@ module.exports = {
         try {
             let response = await fetch(url);
             let json = await response.json();
-            console.log(json)
+            console.log(json);
+            message.channel.send(json.results[0].url)
         } catch (err) {
             console.error('not work');
         }
