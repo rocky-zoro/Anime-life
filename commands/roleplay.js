@@ -14,7 +14,7 @@ module.exports = {
         try {
             let response = await fetch(url);
             let json = await response.json();
-            console.log(json.media[0]);
+            console.log(json);
             const index = Math.floor(Math.random() * json.results.length);
         
             const newEmbed = await new Discord.MessageEmbed()
@@ -23,7 +23,7 @@ module.exports = {
             .setDescription('roleplay')
             .setColor('RANDOM')
             .setURL('https://discord.gg/adnga86cdA')
-            .setImage(`${json.results[index].media.mediumgif.url}`)
+            .setImage(`${json.results[index].url}`)
             .setFooter('For more info use ?search,?dbf or ?moreinfo','https://imgur.com/22ncPbk.png')
             message.channel.send(json.results[index].url)
             
