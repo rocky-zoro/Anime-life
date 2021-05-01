@@ -9,12 +9,12 @@ module.exports = {
         
         let note = args.join(" ");
         if(!note) return message.channel.send("You forgot to include the title of the Manga, mate.\nTo see how to remove a manga from your manga list, look at the example.\nE.g.-`?rm Kawaii`, `?roleplay Pat`");
-        let url = `https://g.tenor.com/v1/search?q=${note}&key=${process.env.tenorkey}&limit=84`;
+        let url = `https://g.tenor.com/v1/search?q=${note}&key=${process.env.tenorkey}&limit=8`;
         let url1 = "https://g.tenor.com/v1/search?q=excited&key=LIVDSRZULELA&limit=8";
         try {
             let response = await fetch(url);
             let json = await response.json();
-            console.log(json);
+            console.log(json.media[0]);
             const index = Math.floor(Math.random() * json.results.length);
         
             const newEmbed = await new Discord.MessageEmbed()
