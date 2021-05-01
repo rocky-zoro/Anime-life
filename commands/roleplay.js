@@ -16,7 +16,7 @@ module.exports = {
             console.log(json);
             const index = Math.floor(Math.random() * json.results.length);
         
-            const newEmbed = new Discord.MessageEmbed()
+            const newEmbed = await new Discord.MessageEmbed()
             
             .setTitle(`**${note}**`)
             .setDescription('roleplay')
