@@ -14,7 +14,7 @@ module.exports = {
         try {
             let response = await fetch(url);
             let json = await response.json();
-            console.log(json);
+            console.log(json.results[0].media);
             const index = Math.floor(Math.random() * json.results.length);
         
             const newEmbed = await new Discord.MessageEmbed()
