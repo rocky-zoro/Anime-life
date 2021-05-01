@@ -5,7 +5,7 @@ module.exports = {
     name:'roleplay',
     aliases:['rp'],
     description:'roleplay',
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         
         let note = args.join(" ");
