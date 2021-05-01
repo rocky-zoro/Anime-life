@@ -22,7 +22,7 @@ module.exports = {
             .setDescription('roleplay')
             .setColor('RANDOM')
             .setURL('https://discord.gg/adnga86cdA')
-            .setImage(json.results[index].url)
+            .setImage(`${json.results[index].url}`)
             .setFooter('For more info use ?search,?dbf or ?moreinfo','https://imgur.com/22ncPbk.png')
             
             message.channel.send(newEmbed);
