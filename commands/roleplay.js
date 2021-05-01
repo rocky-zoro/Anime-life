@@ -1,5 +1,4 @@
-const { get } = require("node-superfetch");
-
+const fetch = require("node-fetch");
 module.exports = {
 
     name:'roleplay',
@@ -12,8 +11,9 @@ module.exports = {
         if(!note) return message.channel.send("You forgot to include the title of the Manga, mate.\nTo see how to remove a manga from your manga list, look at the example.\nE.g.-`?rm Kawaii`, `?roleplay Pat`");
         let url = `https://g.tenor.com/v1/search?q=animekawaii&key=${process.env.tenorkey}&limit=8`;
         try {
-            const { body } = await request.get(url);
-            console.log(body.items);
+            let response = await fetch(url);
+            let json = await response.json();
+            console.log(json)
         } catch (err) {
             console.error('not work');
         }
