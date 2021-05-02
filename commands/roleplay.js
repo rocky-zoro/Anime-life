@@ -10,14 +10,17 @@ module.exports = {
         let note = args.join(" ");
         if(!note) return message.channel.send("You forgot to include the title of the Manga, mate.\nTo see how to remove a manga from your manga list, look at the example.\nE.g.-`?rm Kawaii`, `?roleplay Pat`");
         let st;
-        if(note ==='cute'){
-            st = "hug";
-            limit = 10;
-        } else{
-            st = "sounds good doesn't work";
-            limit = 2;
-        }
+        switch(note){
+            case 'cute':
+                st = "anime hug";
+                limit = 10;
+                break;
+            default:
+                    
+                st = "sounds good doesn't work";
+                limit = 2;
 
+        }
         let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
         try {
             let response = await fetch(url);
@@ -31,9 +34,8 @@ module.exports = {
             .setDescription('roleplay')
             .setColor('RANDOM')
             .setURL('https://discord.gg/adnga86cdA')
-            .setImage(`${json.results[0].media[0].gif.url}`)
+            .setImage(`${json.results[index].media[0].gif.url}`)
             .setFooter('For more info use ?search,?dbf or ?moreinfo','https://imgur.com/22ncPbk.png')
-            message.channel.send(json.results[index].url)
             
             message.channel.send(newEmbed);
 
