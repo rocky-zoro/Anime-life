@@ -15,10 +15,57 @@ module.exports = {
                 st = "anime hug";
                 limit = 10;
                 break;
+
+            case'tch':
+                st = 'tch';
+                limit = 4;
+                break;
+        
+            case'laugh':
+                st = 'anime laughing';
+                limit = 15;
+                break;
+            case'shy':
+                st = '20';
+                limit = 2;
+                break;
+            case'yes':
+                st = 'anime yes';
+                limit = 8;
+                break;
+            case'pat':
+                st = 'anime pat';
+                limit = 10;
+                break;
+            case'kick':
+                st = 'anime kick';
+                limit = 10;
+                break;
+            case'punch':
+                st = 'anime puncg';
+                limit = 10;
+                break;
+            case'slap':
+                st = 'anime slap';
+                limit = 10;
+                break;
+            case'good night':
+                st = 'anime good night';
+                limit = 10;
+                break;
+            case'hehe':
+                st = 'anime hehe';
+                limit = 10;
+                break;
+            case'okay':
+                st = 'anime okay';
+                limit = 2;
+                break;
+                
             default:
                     
-                st = "sounds good doesn't work";
-                limit = 2;
+                st = "anime no";
+                limit = 50;
 
         }
         let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
