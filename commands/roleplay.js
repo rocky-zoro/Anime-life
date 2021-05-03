@@ -96,7 +96,7 @@ module.exports = {
                 limit = 50;
 
         }
-        doing = math.floor(math.random()*doing.length); 
+        no = Math.floor(Math.random()*doing.length); 
         let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
             let response = await fetch(url);
             let json = await response.json();
@@ -105,7 +105,7 @@ module.exports = {
         
             const newEmbed = await new Discord.MessageEmbed()
             
-            .setTitle(`**${message.author.user}${doing}${taggeruser}**`)
+            .setTitle(`**${message.author.user}${doing[no]}${taggeruser}**`)
             .setDescription('roleplay')
             .setColor('RANDOM')
             .setURL('https://discord.gg/adnga86cdA')
