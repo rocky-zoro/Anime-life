@@ -21,7 +21,7 @@ module.exports = {
             taggeruse = await client.users.fetch(mention)
             taggeruser = taggeruse.username;
         } else if (note[1].match(/(\d+)/)) {
-            taggeruse = await client.users.fetch(wo[1]);
+            taggeruse = await client.users.fetch(note[1]);
             taggeruser = taggeruse.username;
         } else {
             taggeruser = note[1];
