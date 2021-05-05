@@ -16,8 +16,8 @@ module.exports = {
         let taggeduser;
         let taggedsomeoneornot = "yes";
         let st;
-        let doing;
-        let asinglehuman;
+        let doing = [" "];
+        let asinglehuman = [" "];
 
 
 
@@ -140,7 +140,7 @@ module.exports = {
                 doingwhat=[`is annoyed by this${taggeduser}`,"happy"]
                 limitforsearchterm = [50, 25]
                 stno = Math.floor(Math.random()*searchterm.length);
-                doing = doingwhat[stno];
+                doing = [doingwhat[stno]];
                 st = searchterm[stno];
                 limit = limitforsearchterm[stno];
         
