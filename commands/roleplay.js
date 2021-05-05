@@ -152,13 +152,12 @@ module.exports = {
                 break;
             default:
                 searchterm = ["anime nope","anime no"]; //whichever user is tagged said no okay or someone else tagged Idk said no // message.author.name wants to say that
-                doingwhat=[`is doing his${taggeduser} thing`]
+                doingwhat=[`is doing his ${taggeduser} thing`]
                 asinglehuman =[`is doing his ${taggeduser}-thing`]
-                limitforsearchterm = [50, 25]
                 stno = Math.floor(Math.random()*searchterm.length);
                 doing = [doingwhat[stno]];
                 st = searchterm[stno];
-                limit = limitforsearchterm[stno];
+                limit = 10;
         
         }
         
@@ -167,19 +166,11 @@ module.exports = {
         if(catchederror === "yes"){
 
             st = taggeduser;
-            
-            taggeduser = " " + taggeduser;
 
         } else if (catchederror === "anime"){
 
             st = taggedusername;
-            
-            taggeduser = " " + taggeduser;
-
         } else{
-
-            taggeduser = " " + taggeduser;
-
         }
         
         
