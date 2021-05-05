@@ -165,7 +165,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setDescription(`${message.author.username} ${asinglehuman[singlehumanindexno]}${beauseof}`)
+                .setDescription(`**${message.author.username}** ${asinglehuman[singlehumanindexno]}${beauseof}`)
                 .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
