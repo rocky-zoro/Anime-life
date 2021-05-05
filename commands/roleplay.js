@@ -193,7 +193,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setDescription(`**${message.author.username}** ${asinglehuman[singlehumanindexno]}${beauseof}`)
+                .setDescription(`**${message.author.username}** ${asinglehuman[singlehumanindexno]}${taggeduser}${beauseof}-${st}`)
                 .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
@@ -213,7 +213,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setTitle(`${message.author.username} ${doing[taggedhumanindexno]}${beauseof}`)
+                .setTitle(`${message.author.username} ${doing[taggedhumanindexno]}${taggeduser}${beauseof}-${st}`)
                 .setDescription('roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
