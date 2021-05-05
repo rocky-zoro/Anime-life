@@ -7,27 +7,71 @@ module.exports = {
     async execute(client, message, args, Discord){
 
         try {
+
         
-        let note = args.join(" ").trim().split(" ",2);
-        if(!note) return message.channel.send("You forgot to include the title of the Manga, mate.\nTo see how to remove a manga from your manga list, look at the example.\nE.g.-`?rp Kawaii`, `?roleplay Pat`");
-        if(!note[1]){
-            taggeruser = message.author.username;
-        }
-        if(note[1].startsWith('<@') && note[1].endsWith('>')) {
-            mention = note[1].slice(2,-1)
-            if(mention.startsWith('!')) {
-                mention = mention.slice(1);
-            }
-            taggeruse = await client.users.fetch(mention)
-            taggeruser = taggeruse.username;
-        } else if (note[1].match(/(\d+)/)) {
-            taggeruse = await client.users.fetch(note[1]);
-            taggeruser = taggeruse.username;
-        } else {
-            taggeruser = note[1];
-        }
+        let note = args.join(" ").trim().split(" ",50);
+        if(!note) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
+        
+        let beauseof = ". "+ note.slice(2,50).join(" ");
+        let taggeduser;
+        let taggedsomeoneornot = "yes";
         let st;
         let doing;
+        let asinglehuman;
+
+
+
+        
+        
+        if(!note[1] || note[1]==="no-one"){
+            taggedsomeoneornot = "no";
+            const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Mahatma Gandhi" ,"Barack Obama", "Drake", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
+            const indexfullname = Math.floor(Math.random() * userfullname.length);
+        
+            taggeduser = userfullname[indexfullname];
+        }else if(note[1].startsWith('<@') && note[1].endsWith('>')) {
+            try{
+                    mention = note[1].slice(2,-1)
+                if(mention.startsWith('!')) {
+                    mention = mention.slice(1);
+                }
+                const infotaggeduser= await client.users.fetch(mention)
+                taggeduser = infotaggeduser.username;
+            } catch{    
+                const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Mahatma Gandhi" ,"Barack Obama", "Drake", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
+            const indexfullname = Math.floor(Math.random() * userfullname.length);
+        
+            taggeduser = userfullname[indexfullname];
+        
+            }
+        } else if (note[1].match(/^[0-9]+$/)) {
+            try{
+            const infotaggeduser = await client.users.fetch(note[1]);
+            taggeduser = infotaggeduser.username;} catch{
+                const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Barack Obama", "Drake", "Mahatma Gandhi", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
+                const indexfullname = Math.floor(Math.random() * userfullname.length);
+            
+                taggeduser = userfullname[indexfullname];
+            
+            }
+
+        } else if(note[1].startsWith('-')){
+            someoneidk = note[1].slice(1,50);
+            taggeduser = someoneidk;
+        } else if(note[1] === "?anime"){
+            taggeduser = "will add only anime characters"
+        }else {
+            const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Barack Obama", "Drake", "Mahatma Gandhi", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
+                const indexfullname = Math.floor(Math.random() * userfullname.length);
+            
+                taggeduser = userfullname[indexfullname];
+        }
+        
+        
+        
+        
+        
+        
         switch(note[0]){
             case 'cute':
                 st = "anime hug";
@@ -37,13 +81,15 @@ module.exports = {
             case 'tch':
                 st = 'tch';
                 doing = ["is annoyed by","is displeased by"];
+                asinglehuman = ["is getting mad"];
                 limit = 4;
                 break;
         
             case 'laugh':
                 st = 'anime laughing';
                 limit = 15;
-                doing = "is teasing";
+                doing = ["is teasing"];
+                asinglehuman = ["is laughing"];
                 break;
             case 'shy':
                 st = 'anime shy';
@@ -89,32 +135,69 @@ module.exports = {
                 st = 'anime love'
                 limit = 15;
                 break;
-            
             default:
-                     
-                st = "anime nope";
-                limit = 50;
+                searchterm = ["anime nope","anime no"]; //whichever user is tagged said no okay or someone else tagged Idk said no // message.author.name wants to say that
+                doingwhat=[`is annoyed by this${taggeduser}`,"happy"]
+                limitforsearchterm = [50, 25]
+                stno = Math.floor(Math.random()*searchterm.length);
+                doing = doingwhat[stno];
+                st = searchterm[stno];
+                limit = limitforsearchterm[stno];
+        
+        }        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if(taggedsomeoneornot === "no"){
 
+            singlehumanindexno = Math.floor(Math.random()*asinglehuman.length); 
+            let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
+                let response = await fetch(url);
+                let json = await response.json();
+                console.log(json.results);
+                const index = Math.floor(Math.random() * json.results.length);
+            
+                const newEmbed = await new Discord.MessageEmbed()
+                
+                .setTitle(`**${message.author.username} ${asinglehuman[singlehumanindexno]}${beauseof}**`)
+                .setDescription('Roleplay')
+                .setColor('RANDOM')
+                .setURL('https://discord.gg/adnga86cdA')
+                .setImage(`${json.results[index].media[0].gif.url}`)
+                .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                
+                message.channel.send(newEmbed);
+
+
+        } else{
+            
+            taggedhumanindexno = Math.floor(Math.random()*doing.length); 
+            let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
+                let response = await fetch(url);
+                let json = await response.json();
+                console.log(json.results);
+                const index = Math.floor(Math.random() * json.results.length);
+            
+                const newEmbed = await new Discord.MessageEmbed()
+                
+                .setTitle(`**${message.author.username} ${doing[taggedhumanindexno]} ${taggeduser}${beauseof}**`)
+                .setDescription('roleplay')
+                .setColor('RANDOM')
+                .setURL('https://discord.gg/adnga86cdA')
+                .setImage(`${json.results[index].media[0].gif.url}`)
+                .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                
+                message.channel.send(newEmbed);
+
+        
         }
-        no = Math.floor(Math.random()*doing.length); 
-        let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
-            let response = await fetch(url);
-            let json = await response.json();
-            console.log(json.results);
-            const index = Math.floor(Math.random() * json.results.length);
-        
-            const newEmbed = await new Discord.MessageEmbed()
-            
-            .setTitle(`**${message.author.username} ${doing[no]} ${taggeruser}**`)
-            .setDescription('roleplay')
-            .setColor('RANDOM')
-            .setURL('https://discord.gg/adnga86cdA')
-            .setImage(`${json.results[index].media[0].gif.url}`)
-            .setFooter('Support us','https://imgur.com/22ncPbk.png')
-            
-            message.channel.send(newEmbed);
 
-        
             } catch (err) {
             console.error('not work');
         }
