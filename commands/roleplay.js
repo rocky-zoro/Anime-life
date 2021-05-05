@@ -12,7 +12,7 @@ module.exports = {
         let note = args.join(" ").trim().split(" ",50);
         if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
         
-        let beauseof = ". "+ note.slice(2,50).join(" ");
+        let beauseof = " "+ note.slice(2,50).join(" ");
         let taggeduser;
         let taggedsomeoneornot = "yes";
         let st;
@@ -35,8 +35,8 @@ module.exports = {
                 if(mention.startsWith('!')) {
                     mention = mention.slice(1);
                 }
-                const infotaggeduser= await client.users.fetch(mention)
-                taggeduser = infotaggeduser.username;
+                const infotaggeduser= await message.guild.members.fetch(mention)
+                taggeduser = infotaggeduser.displayName;
             } catch{    
                 const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Mahatma Gandhi" ,"Barack Obama", "Drake", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
             const indexfullname = Math.floor(Math.random() * userfullname.length);
@@ -46,8 +46,8 @@ module.exports = {
             }
         } else if (note[1].match(/^[0-9]+$/)) {
             try{
-            const infotaggeduser = await client.users.fetch(note[1]);
-            taggeduser = infotaggeduser.username;} catch{
+            const infotaggeduser = await message.guild.members.fetch(note[1]);
+            taggeduser = infotaggeduser.displayName;} catch{
                 const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Barack Obama", "Drake", "Mahatma Gandhi", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
                 const indexfullname = Math.floor(Math.random() * userfullname.length);
             
@@ -80,7 +80,7 @@ module.exports = {
 
             case 'tch':
                 st = 'tch';
-                doing = ["is annoyed by","is displeased by"];
+                doing = [`is annoyed by ${taggeduser}`,`is displeased by${taggeduser}`];
                 asinglehuman = ["is getting mad"];
                 limit = 4;
                 break;
@@ -186,7 +186,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setTitle(`${message.author.username} ${doing[taggedhumanindexno]} ${taggeduser}${beauseof}`)
+                .setTitle(`${message.author.username} ${doing[taggedhumanindexno]}${beauseof}`)
                 .setDescription('roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
