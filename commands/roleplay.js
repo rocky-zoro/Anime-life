@@ -153,6 +153,7 @@ module.exports = {
             default:
                 searchterm = ["anime nope","anime no"]; //whichever user is tagged said no okay or someone else tagged Idk said no // message.author.name wants to say that
                 doingwhat=[`is doing his${taggeduser} thing`]
+                asinglehuman =[`is doing his ${taggeduser}-thing`]
                 limitforsearchterm = [50, 25]
                 stno = Math.floor(Math.random()*searchterm.length);
                 doing = [doingwhat[stno]];
@@ -200,7 +201,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setDescription(`**${message.member.displayName}** ${asinglehuman[singlehumanindexno]}${beauseof}-${st}`)
+                .setDescription(`**${message.member.displayName}** ${asinglehuman[singlehumanindexno]}${beauseof}`)
                 .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
@@ -220,7 +221,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setDescription(`**${message.member.displayName}** ${doing[taggedhumanindexno]}${beauseof}-${st}`)
+                .setDescription(`**${message.member.displayName}** ${doing[taggedhumanindexno]}${beauseof}`)
                 .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
