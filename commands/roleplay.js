@@ -10,7 +10,7 @@ module.exports = {
 
         
         let note = args.join(" ").trim().split(" ",50);
-        if(!note) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
+        if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
         
         let beauseof = ". "+ note.slice(2,50).join(" ");
         let taggeduser;
@@ -177,7 +177,7 @@ module.exports = {
 
         } else{
             
-            taggedhumanindexno = Math.floor(Math.random()*doing.length); 
+            taggedhumanindexno = Math.floor(Math.random()*doing.length);//here is the error
             let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
                 let response = await fetch(url);
                 let json = await response.json();
