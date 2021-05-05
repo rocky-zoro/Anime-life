@@ -73,7 +73,8 @@ module.exports = {
                 const indexanimecharactersname = Math.floor(Math.random() * animecharactersname.length);
 
             
-                taggeduser = animecharactersname[indexanimecharactersname];
+                taggedusername = animecharactersname[indexanimecharactersname];
+                taggeduser = taggedusername.slice(0,-6);
         }else {
             const userfullname =["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Barack Obama", "Drake", "Mahatma Gandhi", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber"]
                 const indexfullname = Math.floor(Math.random() * userfullname.length);
@@ -94,7 +95,7 @@ module.exports = {
 
             case 'tch':
                 st = 'tch';
-                doing = [`is annoyed by ${taggeduser}`,`is displeased by${taggeduser}`];
+                doing = [`is annoyed by${taggeduser}`,`is displeased by${taggeduser}`];
                 asinglehuman = ["is getting mad"];
                 limit = 4;
                 break;
@@ -151,7 +152,7 @@ module.exports = {
                 break;
             default:
                 searchterm = ["anime nope","anime no"]; //whichever user is tagged said no okay or someone else tagged Idk said no // message.author.name wants to say that
-                doingwhat=[`is annoyed by this ${taggeduser}`,"happy"]
+                doingwhat=[`is doing his${taggeduser} thing`]
                 limitforsearchterm = [50, 25]
                 stno = Math.floor(Math.random()*searchterm.length);
                 doing = [doingwhat[stno]];
@@ -165,12 +166,18 @@ module.exports = {
         if(catchederror === "yes"){
 
             st = taggeduser;
+            
+            taggeduser = " " + taggeduser;
 
         } else if (catchederror === "anime"){
 
-            st = taggeduser;
+            st = taggedusername;
+            
+            taggeduser = " " + taggeduser;
 
         } else{
+
+            taggeduser = " " + taggeduser;
 
         }
         
@@ -193,7 +200,7 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setDescription(`**${message.author.username}** ${asinglehuman[singlehumanindexno]}${taggeduser}${beauseof}-${st}`)
+                .setDescription(`**${message.member.displayName}** ${asinglehuman[singlehumanindexno]}${beauseof}-${st}`)
                 .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
@@ -213,8 +220,8 @@ module.exports = {
             
                 const newEmbed = await new Discord.MessageEmbed()
                 
-                .setTitle(`${message.author.username} ${doing[taggedhumanindexno]}${taggeduser}${beauseof}-${st}`)
-                .setDescription('roleplay')
+                .setDescription(`**${message.member.displayName}** ${doing[taggedhumanindexno]}${beauseof}-${st}`)
+                .setTitle('Roleplay')
                 .setColor('RANDOM')
                 .setURL('https://discord.gg/adnga86cdA')
                 .setImage(`${json.results[index].media[0].gif.url}`)
