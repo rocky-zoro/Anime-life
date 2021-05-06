@@ -182,7 +182,7 @@ module.exports = {
         }
 
             } catch (err) {
-            console.error('not work');
+            console.error(err);
         }
 
 
