@@ -6,8 +6,6 @@ module.exports = {
     description:'roleplay',
     async execute(client, message, args, Discord){
 
-        try {
-
         
         let note = args.join(" ").trim().split(" ",50);
         if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
@@ -181,9 +179,7 @@ module.exports = {
         
         }
 
-            } catch (err) {
-            console.error('not work');
-        }
+         
 
 
         
