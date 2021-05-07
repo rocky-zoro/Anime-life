@@ -159,12 +159,12 @@ module.exports = {
                 searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
                 limitno = [14,14,15,20,15]
                 doingarray = [`${ourname} just killed ${taggeduser} with an awesome punch`, `${ourname} killed ${taggeduser} with an ultimate kick`, `${ourname} just shot ${taggeduser}`, `${taggeduser} choked to death by ${ourname}`, `${ourname} just killed ${taggeduser} with an awesome kamehameha`]
-                asinglehumanarray = doingarray = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`];
+                asinglehumanarray = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`];
                 const indexsearchterm = Math.floor(Math.random() * searchterm.length);
                 st = searchterm[indexsearchterm];
                 limit = limitno[indexsearchterm];
                 doing = [`${doingarray[indexsearchterm]}`];
-                asinglehuman = [`${asinglehuman[indexsearchterm]}`];
+                asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
                 break;
 
             case "?anime":
