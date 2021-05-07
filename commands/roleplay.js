@@ -163,8 +163,8 @@ module.exports = {
                 const indexsearchterm = Math.floor(Math.random() * searchterm.length);
                 st = searchterm[indexsearchterm];
                 limit = limitno[indexsearchterm];
-                doing = [doingarray[indexsearchterm]];
-                asinglehuman = [asinglehuman[indexsearchterm]];
+                doing = [`${doingarray[indexsearchterm]}`];
+                asinglehuman = [`${asinglehuman[indexsearchterm]}`];
                 break;
 
             case "?anime":
