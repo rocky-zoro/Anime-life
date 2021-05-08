@@ -101,8 +101,8 @@ module.exports = {
             case 'tch':
 
                 st = 'tch';
-                doing = [`is annoyed by ${taggeduser}`,`is displeased by ${taggeduser}`];
-                asinglehuman = ["is getting mad"];
+                doing = [`${ourname} is annoyed by ${taggeduser}`,`${ourname} is displeased by ${taggeduser}`];
+                asinglehuman = [`${ourname} is getting mad`];
                 limit = 4;
                 break;
 
@@ -166,6 +166,8 @@ module.exports = {
                 doing = [`${doingarray[indexsearchterm]}`];
                 asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
                 break;
+
+            case ""
 
             case "?anime":
 
