@@ -21,7 +21,7 @@ module.exports = {
 
         
         
-        if (!note[1] || note[1]==="no-one") {
+        if (!note[1] || note[1]==="no-one" || note[1] === "me") {
 
             taggedsomeoneornot = "no";
 
