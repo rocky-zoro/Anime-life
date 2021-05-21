@@ -12,7 +12,7 @@ module.exports = {
 
     })
     
-    let info = await on.aggregate([
+    await on.aggregate([
         {
             "$group": {
                 _id : { uid : "$uid"},

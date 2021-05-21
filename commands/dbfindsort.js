@@ -30,7 +30,7 @@ module.exports = {
         
     ]).toArray()
 
-    top160 = info.slice(0,160)
+    let top160 = info.slice(0,160)
 
     
 

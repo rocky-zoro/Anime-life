@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports ={
     name: 'manga',
     aliases:['man','m','mangalife','manga-life'],
@@ -129,8 +127,8 @@ module.exports ={
         
         await msg.react("🤜");
 
-        const nextembed = (reaction, user) => reaction.emoji.name === '🤛' ;
-        const previousembed = (reaction, user) => reaction.emoji.name === '🤜' ;
+        const nextembed = (reaction) => reaction.emoji.name === '🤛' ;
+        const previousembed = (reaction) => reaction.emoji.name === '🤜' ;
 
         const previous = msg.createReactionCollector(nextembed, {time:900000, dispose: true});
 

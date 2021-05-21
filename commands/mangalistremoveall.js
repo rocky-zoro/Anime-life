@@ -12,7 +12,7 @@ module.exports = {
         
         const filter = m => m.author.id === message.author.id;
 
-        const msg = await message.channel.send("`Destroying Manga list.....`\n\nUse this code to destroy/delete your manga list-** 1 1 1 1**");
+        await message.channel.send("`Destroying Manga list.....`\n\nUse this code to destroy/delete your manga list-** 1 1 1 1**");
         const verify = await message.channel.awaitMessages(filter,{max:1, time:30000});
         
         if(!verify.size) return message.channel.send("_____\nProcess has been terminated.");
@@ -20,7 +20,7 @@ module.exports = {
         let choice = verify.first().content;
         if(yes.includes(choice)){
                 
-        const newdoc = await watchlist.findOneAndUpdate({
+        await watchlist.findOneAndUpdate({
             userID: message.author.id,
         },{
             $set:{

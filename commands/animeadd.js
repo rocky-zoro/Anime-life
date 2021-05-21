@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const { Mongoose } = require('mongoose');
 const { collection } = require('../models/watched');
 const watchlist = require('../models/watched');

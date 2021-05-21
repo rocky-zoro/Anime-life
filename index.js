@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 const mongoose = require('mongoose');
 const client = new Discord.Client();
 
-const prefix = '?';
-
 client.commands = new Discord.Collection();
 
 client.events = new Discord.Collection();

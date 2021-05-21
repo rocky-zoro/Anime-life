@@ -16,10 +16,10 @@ module.exports = {
 
     
 
-    result = await watchlist.find({ userID : message.author.id}, (err, watchlist) =>{}) 
+    let result = await watchlist.find({ userID : message.author.id}, (err, watchlist) =>{}) 
 
     
-    max = result.map(element => element.watched.length);
+    let max = result.map(element => element.watched.length);
 
     if(max[0] <= 252){
 
