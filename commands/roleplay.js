@@ -125,7 +125,7 @@ module.exports = {
             case "pat":
 
                 st = "anime pat"
-                doing = [`${ourname} is patting ${taggeduser}`, `${ourname} is patting the top of ${taggeduser}'s head.`]
+                doing = [`${ourname} is patting ${taggeduser}`, `${ourname} is patting the top of ${taggeduser}'s head`]
                 asinglehuman = [`Anili is patting ${ourname}`, `Anili is patting the top of ${ourname}'s head`]
                 limit = 50;
                 break;
