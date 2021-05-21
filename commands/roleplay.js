@@ -11,7 +11,7 @@ module.exports = {
         let note = args.join(" ").trim().split(" ",50);
         if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
         
-        let beauseof = ". "+ note.slice(2,50).join(" ");
+        let beauseof = ". "+ note.slice(2,100).join(" ");
         let taggeduser;
         let taggedsomeoneornot = "yes";
         let st;
@@ -117,7 +117,7 @@ module.exports = {
             case "happy":
 
                 st = "anime happy" 
-                doing = [`${ourname} was overjoyed because of ${taggeduser}'s actions`, ``]
+                doing = [`${ourname} was overjoyed because of ${taggeduser}'s actions`]
                 asinglehuman = [`${ourname} is happy`, `${ourname} is in a great mood`]
                 limit = 50;
                 break;
@@ -153,7 +153,15 @@ module.exports = {
                 doing = [`${ourname} is saying tsk to ${taggeduser}`]
                 asinglehuman = [`${ourname} is saying tsk`]
                 break;
-            
+
+            case "punch":
+
+                st = "punch anime"
+                doing = [`${ourname} just punched ${taggeduser}`, `${ourname}'s punch flattened ${taggeduser} and made their ears buzz.`]
+                asinglehuman = [``]
+                limit = 21;
+                break;
+
             case "kill":
 
                 searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
@@ -166,8 +174,6 @@ module.exports = {
                 doing = [`${doingarray[indexsearchterm]}`];
                 asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
                 break;
-
-            case ""
 
             case "?anime":
 
@@ -203,7 +209,7 @@ module.exports = {
         
         
         if(taggedsomeoneornot === "no"){
-
+                if(asinglehuman.length >1){
                 singlehumanindexno = Math.floor(Math.random()*asinglehuman.length); 
                 let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
                 let response = await fetch(url);
@@ -220,10 +226,31 @@ module.exports = {
                     .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
+                } else{
+
+                singlehumanindexno = Math.floor(Math.random()*asinglehuman.length); 
+                let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
+                let response = await fetch(url);
+                let json = await response.json();
+                const index = Math.floor(Math.random() * json.results.length);
+            
+                const newEmbed = await new Discord.MessageEmbed()
+                
+                    .setDescription(`${asinglehuman[0]}${beauseof}`)
+                    .setTitle('Roleplay')
+                    .setColor('RANDOM')
+                    .setURL('https://discord.gg/adnga86cdA')
+                    .setImage(`${json.results[index].media[0].gif.url}`)
+                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    
+                message.channel.send(newEmbed);
+                
+
+                }
 
 
         } else{
-            
+                if(doing.length>1){
                 taggedhumanindexno = Math.floor(Math.random()*doing.length);//here is the error
                 let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
                 let response = await fetch(url);
@@ -240,6 +267,28 @@ module.exports = {
                     .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
+                }
+                else{
+                    
+                    
+                taggedhumanindexno = Math.floor(Math.random()*doing.length);//here is the error
+                let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
+                let response = await fetch(url);
+                let json = await response.json();
+                const index = Math.floor(Math.random() * json.results.length);
+            
+                const newEmbed = await new Discord.MessageEmbed()
+                
+                    .setDescription(`${doing[0]}${beauseof}`)
+                    .setTitle('Roleplay')
+                    .setColor('RANDOM')
+                    .setURL('https://discord.gg/adnga86cdA')
+                    .setImage(`${json.results[index].media[0].gif.url}`)
+                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    
+                message.channel.send(newEmbed);
+
+                }
 
         
         }
