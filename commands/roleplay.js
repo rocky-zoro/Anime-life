@@ -151,20 +151,20 @@ module.exports = {
                 st = "anime tsk"
                 limit = 4;
                 doing = [`${ourname} is saying tsk to ${taggeduser}`]
-                asinglehuman = [`${ourname} is saying tsk`]
+                asinglehuman = [`${ourname} is saying tsk to Anili`]
                 break;
 
             case "punch":
 
                 st = "punch anime"
                 doing = [`${ourname} just punched ${taggeduser}`, `${ourname}'s punch flattened ${taggeduser} and made their ears buzz.`]
-                asinglehuman = [``]
+                asinglehuman = [`${ourname} just punched Anili`]
                 limit = 21;
                 break;
 
             case "kill":
 
-                searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
+                searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha",]
                 limitno = [14,14,15,20,15]
                 doingarray = [`${ourname} just killed ${taggeduser} with an awesome punch`, `${ourname} killed ${taggeduser} with an ultimate kick`, `${ourname} just shot ${taggeduser}`, `${taggeduser} choked to death by ${ourname}`, `${ourname} just killed ${taggeduser} with an awesome kamehameha`]
                 asinglehumanarray = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`];
@@ -174,6 +174,71 @@ module.exports = {
                 doing = [`${doingarray[indexsearchterm]}`];
                 asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
                 break;
+
+            case "angry":
+                st='anime angry'
+                doing = [`${ourname} is furious with ${taggeduser}`]
+                asinglehuman =[`${ourname} is furious at the moment`]
+                limit = 50;
+                    break;
+                    
+            case "nuzzle":
+                st ="anime nuzzle";
+                doing = [`${taggeduser} is nuzzled by ${ourname}`]
+                asinglehuman=[`${ourname} is nuzzled by Anili`]
+                limit =12;
+                    break;
+                    
+            case "cringe":
+                st = "anime ew";
+                doing = [`${taggeduser} that was cringe mate`]
+                asinglehuman =[`That made ${ourname} cringe`]
+                limit = 10;
+                    break;
+                    
+            case "slap":
+                st = "anime slap";
+                doing = [`${ourname} just slapped ${taggeduser}`]
+                asinglehuman =[`${ourname} just slapped Anili`]
+                limit = 50;    
+                break;
+
+                    
+            case "boo":
+                st = "anime boo";
+                doing = [`${ourname} boo'ed ${taggeduser}`]
+                asinglehuman = [`${ourname} boo'ed Anili` ]
+                limit =13;
+                    break;
+                    
+            case "cool":
+                st = "anime cool"
+                doing = [`${ourname} believes that ${taggeduser} is cool`]
+                asinglehuman = [`Anili believes that ${ourname} is cool`]
+                limit =16;
+                    break;
+            case "swag":
+                st = "anime cool"
+                doing = [`${ourname} believes that ${taggeduser} is swag`]
+                asinglehuman = [`Anili believes that ${ourname} is swag`]
+                limit =16;
+                    break;
+                          
+            case "think":
+                st = "anime think"
+                doing = [`${ourname} is thinking about ${taggeduser}`]
+                asinglehuman = [`${ourname} is thinking`]
+                limit =18;
+                break;
+                
+            case "laugh":
+                st = "anime laugh"
+                doing = [`${ourname} is laughing at ${taggeduser}`]
+                asinglehuman = [`${ourname} is laughing`]
+                limit = 50;
+                break;
+                                
+                
 
             case "?anime":
 
@@ -185,6 +250,9 @@ module.exports = {
                 doing = [`**${ourname}** and **${taggeduser}** is thinking about **${forasinglehumantaggeduser}**`];
                 asinglehuman = [`${ourname} is thinking about ${forasinglehumantaggeduser}`]; 
                 limit = 5;
+                break;
+
+           
                 break;
         
             default:

@@ -30,7 +30,7 @@ module.exports = {
                 value:"To remove all anime from your anime-list"
             }
             )
-        .setFooter("Page 1/5 | Click on the react emoji for next page.");
+        .setFooter("Page 1/6 | Click on the react emoji for next page.");
         
         const embed2 = new Discord.MessageEmbed()
         .setColor('#99e44e')
@@ -62,7 +62,7 @@ module.exports = {
             }
             
         )
-        .setFooter("Page 2/5 | Click on the react emoji for next page.");                                                          
+        .setFooter("Page 2/6 | Click on the react emoji for next page.");                                                          
         
         const embed3 = new Discord.MessageEmbed()
         .setColor('#a6e764')
@@ -92,22 +92,26 @@ module.exports = {
                 value:"`?moreinfo` for top 5 results of your anime and `?mmoreinfo` for top 5 results of your manga."
             }
         )
-        .setFooter("Page 3/5 | Click on the react emoji for next page.");
+        .setFooter("Page 3/6 | Click on the react emoji for next page.");
 
         const embed4 = new Discord.MessageEmbed()
         .setColor('#b3ea7a')
         .setTitle('Anime Suggestions Commands')
         .setDescription("I suggest using `?anime` and `?manga` to get detailed information about the suggestions commands.\n\nUse these commands to get your favourite **Genre**.\n\n?shounen-`?shonen`, `?zerotohero`\n?supernatural\n?sliceoflife-`?life`\n?romance\n?magic-`?fairytale`\n?adventure-`?action`\n?comedy-`?funny`\n?sports-`?fitness`\n?drama-`?crime`\n?fantasy-`?super-power`\n?horror-`?dementia`\n?physchological-`?truecrime`\n?mystery-`?suspense`, `?thriller`\n?sci-fi-`?mecha`,`?shounenai`\n?isekai-`?otherworld`,`?differentworld`")
-        .setFooter("Page 4/5 | Click on the react emoji for next page.");
+        .setFooter("Page 4/6 | Click on the react emoji for next page.");
 
         const embed5 = new Discord.MessageEmbed()
         .setColor('#bfee90')
         .setTitle('Manga Suggestions Commands')
         .setDescription("I suggest using `?anime` and `?manga` to get detailed information about the suggestions commands.\n\nUse these commands to get your favourite **Genre**.\n\n?mshounen-`?mshonen`, `?mzerotohero`\n?msupernatural\n?msliceoflife-`?mrealism`\n?mromance\n?mmagic-`?mfairytale`\n?madventure-`?maction`\n?mcomedy-`?mfunny`\n?msports-`?mfitness`\n?mdrama-`?mcrime`\n?mfantasy-`?msuper-power`\n?mhorror-`?mdementia`\n?mphyschological-`?mtruecrime`\n?mmystery-`?msuspense`, `?mthriller`\n?msci-fi-`?mmecha`,`?mshounenai`\n?misekai-`?motherworld`,`?mdifferentworld`")
-        .setFooter("Page 5/5 | Click on the react emoji for next page.");
+        .setFooter("Page 5/6 | Click on the react emoji for next page.");
 
-        
-        let pages = [embed, embed2, embed3, embed4, embed5]
+        const embed6 = new Discord.MessageEmbed()
+        .setColor('#bfee90')
+        .setTitle("Roleplay - ?rp")
+        .setDescription("`tch`, `hug`, `happy`, `pat`, `peck`, `kiss`, `tsk`, `punch`, `kill`, `angry`, `nuzzle`, `cringe`, `slap`, `boo`, `cool`, `swag`, `think`")
+        .setFooter("Page 6/6 | Support us by using $support and $vote")
+        let pages = [embed, embed2, embed3, embed4, embed5, embed6]
         let page = 0;
 
 
@@ -131,7 +135,7 @@ module.exports = {
             page = page + 1;
             msg.edit(pages[page]);
             console.log(page)
-            if (page === 5){
+            if (page === 6){
                 page=0
                 msg.edit(pages[page])
 
@@ -143,7 +147,7 @@ module.exports = {
             page = page + 1;
             msg.edit(pages[page]);
             console.log(page)
-            if (page === 5){
+            if (page === 6){
                 page=0
                 msg.edit(pages[page])
 
@@ -156,7 +160,7 @@ module.exports = {
             msg.edit(pages[page]);
             console.log(page)
             if (page === -1){
-                page=4
+                page=5
                 msg.edit(pages[page])
 
             }
