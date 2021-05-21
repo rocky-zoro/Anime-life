@@ -276,6 +276,13 @@ module.exports = {
                 asinglehuman =[`${ourname} bonked Anili`]
                 limit =7;
 
+                break;
+            case "ignore":
+                st = "anime ignore"
+                doing =[`${ourname} Elon is completely oblivious to ${taggeduser}'s existence.`]
+                asinglehuman = [`${ourname} is ignoring Anili`]
+                limit =4;
+
                 break;    
             case "?anime":
 
