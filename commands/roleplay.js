@@ -240,7 +240,7 @@ module.exports = {
             case "nope": 
                 st = "anime nope"
                 doing = [`To ${taggeduser}, ${ourname} said, "Nope"`]
-                asinglehuman = [`To Anili, ${ourname} said, "Nope"`]
+                asinglehuman = [`${ourname} said, "Nope"`]
                 limit = 40;
                 break;
 
