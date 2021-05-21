@@ -126,7 +126,7 @@ module.exports = {
 
                 st = "anime pat"
                 doing = [`${ourname} is patting ${taggeduser}`, `${ourname} is patting the top of ${taggeduser}'s head.`]
-                asinglehuman = [`Anili is patting ${ourname}`, `Anili is patting the top of ${ourname}'s head.`]
+                asinglehuman = [`Anili is patting ${ourname}`, `Anili is patting the top of ${ourname}'s head`]
                 limit = 50;
                 break;
             
@@ -237,8 +237,33 @@ module.exports = {
                 asinglehuman = [`${ourname} is laughing`]
                 limit = 50;
                 break;
-                                
+            case "nope": 
+                st = "anime nope"
+                doing = [`To ${taggeduser}, ${ourname} said, "Nope"`]
+                asinglehuman = [`To Anili, ${ourname} said, "Nope"`]
+                limit = 40;
+                break;
+
+            case"yeah":
+                st = "anime sparkle"
+                doing = [`${ourname} agrees with ${taggeduser}`]
+                asinglehuman = [`${ourname} agrees`]
+                limit =20;
+                break;
+
+            case "no":
+                st ="anime nope"
+                doing = [`${ourname} said no to ${taggeduser}`]
+                asinglehuman = [`${ourname} says no`]
+                limit = 40;
+                break;
+            case "yes":
                 
+                st = "anime sparkle"
+                doing = [`${ourname} agrees with ${taggeduser}`]
+                asinglehuman = [`${ourname} agrees`]
+                limit =20;
+                break;
 
             case "?anime":
 
@@ -296,7 +321,6 @@ module.exports = {
                 message.channel.send(newEmbed);
                 } else{
 
-                singlehumanindexno = Math.floor(Math.random()*asinglehuman.length); 
                 let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
                 let response = await fetch(url);
                 let json = await response.json();
@@ -337,9 +361,7 @@ module.exports = {
                 message.channel.send(newEmbed);
                 }
                 else{
-                    
-                    
-                taggedhumanindexno = Math.floor(Math.random()*doing.length);//here is the error
+
                 let url = `https://g.tenor.com/v1/search?q=${st}&key=${process.env.tenorkey}&limit=${limit}`;
                 let response = await fetch(url);
                 let json = await response.json();
