@@ -289,7 +289,38 @@ module.exports = {
                 asinglehuman = [`${ourname} is ignoring Anili`]
                 limit =4;
 
-                break;    
+                break;
+            case "bow":
+                st = "anime bow"
+                doing =[`${ourname} bow down to ${taggeduser}`]
+                asinglehuman = [`${ourname} bow down`]
+                limit = 6;
+                break;
+            case "cheer":
+
+                st = "anime cheer"
+                doing = [`${ourname} cheer up ${taggeduser}`]
+                asinglehuman = [`Anili cheer up ${ourname}`]
+                limit = 7; 
+                break;
+            case "cuddle":
+                st = "anime cuddle"
+                doing = [`${ourname} cuddles ${taggeduser}`]
+                asinglehuman = [`Anili cuddles ${ourname}`]
+                limit = 20;
+                break;
+            case "nose-bleed":
+                st ="anime nose bleed"
+                doing = [`${ourname} got a nose bleed after seeing ${taggeduser}`]
+                limit = 20;
+                break;
+            case "dance":
+                st = "anime dance"
+                doing = [`${ourname} is dancing with ${taggeduser}`]
+                asinglehuman = [`${ourname} is dancing`]
+                limit =25;
+                break;
+                
             case "?anime":
 
                 // eslint-disable-next-line no-case-declarations
