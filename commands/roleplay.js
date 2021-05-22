@@ -290,7 +290,7 @@ module.exports = {
                 break;
             case "ignore":
                 st = "anime ignore"
-                doing =[`${ourname} is completely oblivious to ${taggeduser}'s existence.`]
+                doing =[`${ourname} is completely oblivious to ${taggeduser}'s existence`]
                 asinglehuman = [`${ourname} is ignoring Anili`]
                 limit =4;
 
@@ -376,6 +376,24 @@ module.exports = {
                 limit =limitindexarray[ourindexno];
                 
                 break;
+            case "run":
+                st = "anime run"
+                doing = [`${ourname} is running from ${taggeduser}`]
+                asinglehuman = [`${ourname} is fleeing`]
+                limit = 20;
+                break;
+            case "indeed":
+                st = "anime indeed"
+                doing = [`Indeed you are right, ${taggeduser}`]
+                asinglehuman = [`Indeed ${ourname} is always right`]
+                limit =3;
+                break;
+
+            case "ofcourse":
+                st = "anime smug"
+                doing =[`Ofcourse ${ourname} is right, ${taggeduser}`]
+                asinglehuman =[`Ofcoure ${ourname} is alway right`]
+                break;
 
             case "?anime":
 
@@ -399,7 +417,7 @@ module.exports = {
                 const stno = Math.floor(Math.random()*randomsearchterm.length);
                 st = randomsearchterm[stno]
                 doing=[`${ourname} is doing his ${st} thing with ${taggeduser}`]
-                asinglehuman =[`${ourname}is doing his ${st} thing`]
+                asinglehuman =[`${ourname} is doing his ${st} thing`]
                 limit = 5;
 
         
