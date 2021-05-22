@@ -182,6 +182,7 @@ module.exports = {
                 break;
 
             case "angry":
+                
                 st='anime angry'
                 doing = [`${ourname} is furious with ${taggeduser}`]
                 asinglehuman =[`${ourname} is furious at the moment`]
@@ -189,6 +190,7 @@ module.exports = {
                     break;
                     
             case "nuzzle":
+                
                 st ="anime nuzzle";
                 doing = [`${taggeduser} is nuzzled by ${ourname}`]
                 asinglehuman=[`${ourname} is nuzzled by Anili`]
@@ -196,6 +198,7 @@ module.exports = {
                     break;
                     
             case "cringe":
+                
                 st = "anime ew";
                 doing = [`${taggeduser} that was cringe mate`]
                 asinglehuman =[`That made ${ourname} cringe`]
@@ -203,6 +206,7 @@ module.exports = {
                     break;
                     
             case "slap":
+
                 st = "anime slap";
                 doing = [`${ourname} just slapped ${taggeduser}`]
                 asinglehuman =[`${ourname} just slapped Anili`]
@@ -211,6 +215,7 @@ module.exports = {
 
                     
             case "boo":
+
                 st = "anime boo";
                 doing = [`${ourname} boo'ed ${taggeduser}`]
                 asinglehuman = [`${ourname} boo'ed Anili` ]
@@ -285,7 +290,7 @@ module.exports = {
                 break;
             case "ignore":
                 st = "anime ignore"
-                doing =[`${ourname} Elon is completely oblivious to ${taggeduser}'s existence.`]
+                doing =[`${ourname} is completely oblivious to ${taggeduser}'s existence.`]
                 asinglehuman = [`${ourname} is ignoring Anili`]
                 limit =4;
 
@@ -312,6 +317,7 @@ module.exports = {
             case "nose-bleed":
                 st ="anime nose bleed"
                 doing = [`${ourname} got a nose bleed after seeing ${taggeduser}`]
+                asinglehuman = [`${ourname} got a nose bleed.`]
                 limit = 20;
                 break;
             case "dance":
@@ -355,7 +361,7 @@ module.exports = {
                 asinglehuman = [`Anili just glomped ${ourname}`]
                 limit =8;
                 break;
-                
+
             case "love":
                 let lovesearchindexarray = [`anime glomp`, `anime smile`, ]
                 let ourindexno = Math.floor(math.random() * lovesearchindexarray)
