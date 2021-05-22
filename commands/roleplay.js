@@ -320,7 +320,57 @@ module.exports = {
                 asinglehuman = [`${ourname} is dancing`]
                 limit =25;
                 break;
+      
+            case "dead":
+                st = "anime dead"
+                doing = [`${taggeduser} just died`]
+                asinglehuman = [`${ourname} is dead`]
+                limit = 7;
+                break;
+            
+            case "dab":
+                st = "anime dab"
+                doing = [`${ourname} just dabbed ${taggeduser}`]
+                asinglehuman = [`${ourname} just did the coolest dab`]
+                limit =10;
+                break;
+            
+            case "cry":
+                st  = "anime cry"
+                doing = [`${ourname} is crying because of ${taggeduser}`]
+                asinglehuman = [`${ourname} is crying`]
+                limit = 30;
+                break;
+            
+            case "hate":
+                st = "anime hate"
+                doing = [`${ourname} hate ${taggeduser}`]
+                asinglehuman = [`${ourname} hates Anili`]
+                limit = 10;
+                break;
+            
+            case "glomp":
+                st = "anime glomp"
+                doing = [`${ourname} just glomped ${taggeduser}`]
+                asinglehuman = [`Anili just glomped ${ourname}`]
+                limit =8;
+                break;
                 
+            case "love":
+                let lovesearchindexarray = [`anime glomp`, `anime smile`, ]
+                let ourindexno = Math.floor(math.random() * lovesearchindexarray)
+
+                let lovedoingtermarray = [`${ourname} hugging ${taggeduser}`, `${ourname} is smiling because he loves ${taggeduser}`]
+                let loveasinglehumanarray = [`Anili hugged ${ourname}`, `Anili is smiling because he loves ${taggeduser}`]
+                let limitindexarray = [8, 4]
+                
+                st = lovesearchindexarray[ourindexno]
+                doing  = [`${lovedoingtermarray[ourindexno]}`]
+                asinglehuman = [`${loveasinglehumanarray[ourindexno]}`]
+                limit =limitindexarray[ourindexno];
+                
+                break;
+
             case "?anime":
 
                 // eslint-disable-next-line no-case-declarations

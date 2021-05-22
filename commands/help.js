@@ -109,7 +109,7 @@ module.exports = {
         const embed6 = new Discord.MessageEmbed()
         .setColor('#bfee90')
         .setTitle("Roleplay - ?rp")
-        .setDescription("**Roleplay commands**\n`tch`, `hug`, `happy`, `pat`, `peck`, `kiss`, `tsk`, `punch`, `kill`, `angry`, `nuzzle`, `cringe`, `slap`, `boo`, `cool`, `swag`, `think`, `nope`, `no`, `yeah`, `yes`, `bored`, `bonk`, `?anime`, `ignore`, `dance`, `bow`, `cheer`, `cuddle`, `nose-bleed`\nE.g. - `?rp hug` \n\n**Tag User**\n- Tag by @\nE.g. - `?rp pat @ron`\n- Tag by user id \nE.g. - `?rp yes 75451845171618415`\n- Tag your custom name by using hyphen **-**.\nE.g. - `?rp kill -ron`\n- Tag random anime characters by using **?anime**.\nE.g. - `?rp laugh ?anime`\n- Tag random anime characters and celebrities by using **?random**.\nE.g. - `?rp hug ?random`")
+        .setDescription("**Roleplay commands**\n`tch`, `hug`, `happy`, `pat`, `peck`, `kiss`, `tsk`, `punch`, `kill`, `angry`, `nuzzle`, `cringe`, `slap`, `boo`, `cool`, `swag`, `think`, `nope`, `no`, `yeah`, `yes`, `bored`, `bonk`, `?anime`, `ignore`, `dance`, `bow`, `cheer`, `cuddle`, `nose-bleed`, `dance`, `dead`, `dab`, `cry`, `hate`, `glomp`, `love`\nE.g. - `?rp hug` \n\n**Tag User**\n- Tag by @\nE.g. - `?rp pat @ron`\n- Tag by user id \nE.g. - `?rp yes 75451845171618415`\n- Tag your custom name by using hyphen **-**.\nE.g. - `?rp kill -ron`\n- Tag random anime characters by using **?anime**.\nE.g. - `?rp laugh ?anime`\n- Tag random anime characters and celebrities by using **?random**.\nE.g. - `?rp hug ?random`")
         .setFooter("Page 6/6 | Support us by using $support and $vote")
         let pages = [embed, embed2, embed3, embed4, embed5, embed6]
         let page = 0;
