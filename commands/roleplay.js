@@ -392,9 +392,64 @@ module.exports = {
             case "ofcourse":
                 st = "anime smug"
                 doing =[`Ofcourse ${ourname} is right, ${taggeduser}`]
-                asinglehuman =[`Ofcoure ${ourname} is alway right`]
+                asinglehuman =[`Ofcourse ${ourname} is always right`]
+                limit = 10;
                 break;
-
+            case "kick":
+                st = "anime kick"
+                doing = [`${ourname} kicked ${taggeduser}`]
+                asinglehuman = [`${ourname} kicked Anili`]
+                limit = 10;
+                break;
+            case "bye":
+                st = "anime bye"
+                doing  = [`Later ${taggeduser}`]
+                asinglehuman = [`${Bye}`]
+                limit = 10;
+                break;
+            case "hi":
+                st ="anime hi"
+                doing =[`${ourname} says hi to ${taggeduser}`]
+                asinglehuman = [`${ourname} says hi to Anili`] 
+                limit =10;
+                break;
+            case "thanks":
+                st = "anime thanks"
+                doing =[`${ourname} says thanks to ${taggeduser}`]
+                asinglehuman = [`${ourname} says thanks to Anili`]
+                limit =5;
+                break;
+            case "stab":
+                st  = "anime stab"
+                doing = [`${ourname} stabbed ${taggeduser}`]
+                asinglehuman = [`${ourname} stabbed Anili`]
+                limit = 7;
+                break;
+            case "thumbsup":
+                st = "anime thumsup"
+                doing = [`Hell yeah, ${taggeduser}`]
+                asinglehuman = [`Hell yeah, Anili`]
+                limit = 12; 
+                break;
+            case "what":
+                st = "anime what"
+                limit = 10;
+                doing = [ `What ${taggeduser}`]
+                asinglehuman = [`What Anili`]
+                limit =12;
+                break;
+            case "poke" :
+                st = "anime poke"
+                limit = 10;
+                doing = [`${ourname} is poking ${taggeduser}`]
+                asinglehuman = [`${ourname} is poking Anili`]
+                break;
+            case "beg":
+                st = "anime beg"
+                limit = 10;
+                doing = [`${ourname} is begging ${taggeduser}`]
+                asinglehuman = [`${ourname} is begging`]
+                break;
             case "?anime":
 
                 // eslint-disable-next-line no-case-declarations
