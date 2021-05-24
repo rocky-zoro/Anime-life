@@ -404,7 +404,7 @@ module.exports = {
             case "bye":
                 st = "anime bye"
                 doing  = [`Later ${taggeduser}`]
-                asinglehuman = [`${Bye}`]
+                asinglehuman = [`Bye`]
                 limit = 10;
                 break;
             case "hi":
