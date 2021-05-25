@@ -501,7 +501,7 @@ module.exports = {
                     .setColor('RANDOM')
                     .setURL('https://discord.gg/adnga86cdA')
                     .setImage(`${json.results[index].media[0].gif.url}`)
-                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    .setFooter('Support us by using ?support and ?vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
                 } else{
@@ -518,7 +518,7 @@ module.exports = {
                     .setColor('RANDOM')
                     .setURL('https://discord.gg/adnga86cdA')
                     .setImage(`${json.results[index].media[0].gif.url}`)
-                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    .setFooter('Support us by using ?support and ?vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
                 
@@ -541,7 +541,7 @@ module.exports = {
                     .setColor('RANDOM')
                     .setURL('https://discord.gg/adnga86cdA')
                     .setImage(`${json.results[index].media[0].gif.url}`)
-                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    .setFooter('Support us by using ?support and ?vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
                 }
@@ -559,7 +559,7 @@ module.exports = {
                     .setColor('RANDOM')
                     .setURL('https://discord.gg/adnga86cdA')
                     .setImage(`${json.results[index].media[0].gif.url}`)
-                    .setFooter('Support us by using $support and $vote','https://imgur.com/22ncPbk.png')
+                    .setFooter('Support us by using ?support and ?vote','https://imgur.com/22ncPbk.png')
                     
                 message.channel.send(newEmbed);
 
