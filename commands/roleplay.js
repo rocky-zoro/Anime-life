@@ -364,7 +364,7 @@ module.exports = {
 
             case "love":
                 let lovesearchindexarray = [`anime glomp`, `anime smile`, ]
-                let ourindexno = Math.floor(Math.random() * lovesearchindexarray)
+                let ourindexno = Math.floor(Math.random() * lovesearchindexarray.length)
 
                 let lovedoingtermarray = [`${ourname} hugging ${taggeduser}`, `${ourname} is smiling because he loves ${taggeduser}`]
                 let loveasinglehumanarray = [`Anili hugged ${ourname}`, `Anili is smiling because he loves ${taggeduser}`]
