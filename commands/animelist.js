@@ -74,18 +74,17 @@ module.exports = {
         .setDescription("\n"+watchlist.map(element => element.anote.slice(217,253).join("\n"))+"\n", {split : true})
         .setFooter('Page-7/7 Support us');
 
-
-        const pagesw = [Embed1, Embed2, Embed3, Embed4, Embed5, Embed6, Embed7]
-
+        const pages = [Embed1, Embed2, Embed3, Embed4, Embed5, Embed6, Embed7]
+        
 
         let page = 0;
 
             
         
         
-        let msg = await message.channel.send(pagesw[0]);
+        let msg = await message.channel.send(pages[0]);
 
-        if(pagesw.length === 1) return;
+        if(pages.length === 1) return;
 
         await msg.react("👈");
         
@@ -155,6 +154,7 @@ module.exports = {
 
 
         })
+
 
         
     }
