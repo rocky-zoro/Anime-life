@@ -10,6 +10,10 @@ module.exports = {
         .setDescription("Support us on these two sites by clicking on the link.")
         .addFields(
             {
+                name:"Top.gg",
+                value:"https://top.gg/bot/820363426685386783"
+            },
+            {
             name: "Discord Bot List",
             value:"https://discord.ly/anime-life"
         

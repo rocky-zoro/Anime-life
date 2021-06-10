@@ -450,21 +450,108 @@ module.exports = {
                 doing = [`${ourname} is begging ${taggeduser}`]
                 asinglehuman = [`${ourname} is begging`]
                 break;
+            case "drool":
+                st = "anime drool"
+                limit = 10;
+                doing = [`${ourname} is drooling over ${taggeduser}`]
+                asinglehuman = [`${ourname} is drooling`]
+                break; 
+            case "sad":
+                st = "anime sad"
+                limit = 15;
+                doing = [`${ourname} is sad because of ${taggeduser}`]
+                asinglehuman =[`${ourname} is sad`]
+                break; 
+            case "die":
+                
+                // eslint-disable-next-line no-case-declarations
+                let searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
+                // eslint-disable-next-line no-case-declarations
+                let limitno = [14,14,15,20,15]
+                // eslint-disable-next-line no-case-declarations
+                let doingarray = [`${ourname} just killed ${taggeduser} with an awesome punch`, `${ourname} killed ${taggeduser} with an ultimate kick`, `${ourname} just shot ${taggeduser}`, `${taggeduser} choked to death by ${ourname}`, `${ourname} just killed ${taggeduser} with an awesome kamehameha`]
+                // eslint-disable-next-line no-case-declarations
+                let asinglehumanarray = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`]
+                // eslint-disable-next-line no-case-declarations
+                const indexsearchterm = Math.floor(Math.random() * searchterm.length);
+                st = searchterm[indexsearchterm];
+                limit = limitno[indexsearchterm];
+                doing = [`${doingarray[indexsearchterm]}`];
+                asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
+                break;     
+               
+            case "phew":
+                st = "anime phew"
+                limit = 7;
+                doing=[`Phew! ${taggeduser} finally stopped`]
+                asinglehuman = [`Phew! that was a close call`]
+                break; 
+            case "nods":
+                
+                st = "anime nods"
+                limit = 20;
+                doing = [`Yeah that's right ${taggeduser}`]
+                asinglehuman = [`Yeah that's right Anili`]
+                break; 
+            case "stomp":
+                st = "anime stomp"
+                limit = 10;
+                doing = [`${taggeduser} is getting stomped by ${ourname}`]
+                asinglehuman =[`${ourname} is getting stomped by Anili`]
+                break; 
+            case "tremble":
+                st = "anime trembling"
+                limit = 10;
+                doing = [`${ourname} is trembling because of ${taggeduser}`]
+                asinglehuman = [`${ourname} is trembling`]
+                break; 
+            case "face-palm":
+                st = "anime face palm"
+                limit =  6;
+                doing = [`That's ${taggeduser} for you 🤦`]
+                asinglehuman = [`I did it again 🤦`]
+                break; 
+            case "kawaii":
+                st = "anime kawaii"
+                limit = 15
+                doing =[`You are so Kawaii ${taggeduser}`]
+                asinglehuman = [`Anili thinks ${ourname} is kawaii`]
+                break; 
+            case "nani":
+                st = "anime nani"
+                limit  = 19;
+                doing = [`NANI!?? What the fuck ${taggeduser}`]
+                asinglehuman = [`NANI?!?`]
+                break;
+            case "wait":
+                st = "anime wait"
+                limit = 8;
+                doing = [`I shall wait ${taggeduser}`]
+                asinglehuman [`I'll be waiting`]
+                break; 
+            case "sweat":
+                st = "anime sweat"
+                limit = 14;
+                doing = [`Trying my best ${taggeduser}`]
+                asinglehuman = [`Yeah you are right hehe`]
+                break; 
+                                        
+                                                                                                                                                                                                    
             case "?anime":
 
                 // eslint-disable-next-line no-case-declarations
-                const animecharname = ["Lelouch Lamperouge anime", "Monkey D. Luffy anime", "L Lawliet  anime", "Levi anime", "Light Yagami  anime", "Roronoa Zoro anime", "Naruto Uzumaki  anime", "Edward Elric  anime", "Killua Zoldyck  anime", "Rintarou Okabe anime", "Kurisu Makis anime", "Itachi Uchiha  anime", "Rem anime", "Gintoki Sakata  anime", "Hachiman Hikigaya anime", "Eren Yeager  anime", "Mikasa Ackerman  anime", "Emilia anime", "Guts anime", "Saitama anime", "Kazuto Kirigaya  anime", "Todoroki Shouto anime", "Kakashi Hatake anime", "Kaneki Ken anime", "Spike Spiegel anime", "Sanji anime", "Son Gokuu anime", "Nico Robin anime", "Yato anime", "Fujiwara Chika anime", "Taiga Aisaka  anime", "Hisoka anime", "Asuna Yuuki  anime", "Sasuke Uchiha anime", "Megumin anime", "Hitagi Senjougahara anime", "Zero Two anime", "Ichigo anime", "Tanjirou Kamado anime", "Shinomiya Kaguya anime", "Roy Mustang  anime", "Joestar Joseph anime", "Saber anime", "Kamina anime", "Yuno Gasai  anime", "Shinobu Oshino anime", "Yukino Yukinoshita anime", "Gojou Satoru anime", "Yuu Ishigami  anime", "Mai Sakurajima anime", "Kurosaki  anime", "Osamu Dazai  anime", "Onizuka Eikichi anime", "Izuku Midoriya  anime", "Alucard anime", "Nezuko anime", "Koyomi Araragi anime", "Holo anime", "Zenitsu Agatsuma  anime", "Kurumi Tokisaki anime", "​Zero Two anime", "Rem anime", "Megumin anime", "Mai Sakurajima anime", "Nezuko Kamado anime", "Mikasa Ackerman anime", "Asuna anime", "Rias Gremory anime", "Hange Zoë anime", "Chika Fujiwara anime", "Yumeko Jabami anime", "Emilia anime", "Bongo Cat anime", "Aqua anime", "Violet Evergarden anime", "Albedo anime", "Akame anime", "Shinobu Kochou anime", "Levi anime", "Himiko Toga anime", "Kaguya Shinomiya anime", "Ram anime", "Miku Nakano anime", "Rin Tohsaka anime", "Shiro anime", "Kanna Kamui anime", "Akeno Himejima anime", "Ai Hayasaka anime", "Hinata Hyuuga anime", "Raphtalia anime", "Kurumi Tokisaki anime", "Rikka Takanashi anime", "Satoru Gojou anime", "Esdeath anime", "Sinon anime", "Nami anime", "Darkness anime", "Neferpitou anime", "Shoto Todoroki anime", "Nino Nakano anime", "Killua Zoldyck anime", "Tohru anime", "Ochako Uraraka anime", "Chizuru Ichinose anime", "Katsuki Bakugou anime", "Erza Scarlet anime", "Nyan Cat anime", "Kurisu Makise anime", "Taiga Aisaka anime", "Ryuuko Matoi anime", "Asuka Langley Soryu anime", "Eren Jaeger anime", "C.C. anime", "Truck-kun anime", "Shouko Nishimiya anime", "Annie Leonhart anime", "Momo Yaoyorozu anime", "Osamu Dazai anime", "Kaori Miyazono anime", "Sasha Braus anime", "Mitsuri Kanroji anime", "Gawr Gura anime", "Kanao Tsuyuri anime", "Yuno Gasai anime", "Mary Saotome anime", "Nico Robin anime", "Tsuyu Asui anime", "Hestia anime", "Touka Kirishima anime", "Shinobu Oshino anime", "Lucy Heartfilia anime", "Tanjirou Kamado anime", "Krista Lenz anime", "Alice Synthesis Thirty anime", "Izuku Midoriya anime", "Erina Nakiri anime", "Rei Ayanami anime", "Yukino Yukinoshita anime", "Giyuu Tomioka anime", "Mitsuha Miyamizu anime", "Jibril anime", "Echidna anime", "Bowsette anime", "Dabi anime", "Ichigo anime", "Lucoa anime", "Ken Kaneki anime", "Tobio Kageyama anime", "Crona anime", "Nao Tomori anime", "Kenma Kozume anime", "Hitagi Senjougahara anime", "Itsuki Nakano anime", "Tooru Oikawa anime", "Tatsumaki anime", "Armin Arlert anime", "Eri anime", "Nejire Hadou anime", "Tanya Degurechaff anime", "Boa Hancock anime", "Shouyou Hinata anime", "Mashiro Shiina anime", "Tsunade anime", "Tamaki Kotatsu anime", "Rio Futaba anime", "Yotsuba Nakano anime", "Komi Shouko anime", "Kurapika anime", "Kyouka Jirou anime", "Midnight anime", "Zenitsu Agatsuma anime", "Nanika anime", "Naruto Uzumaki anime", "Emma anime", "Monkey D. Luffy anime", "Hanako-kun anime", "Kakashi Hatake anime", "Mina Ashido anime", "L anime", "Alice Nakiri anime", "Inugami Korone anime", "Mirko anime", "Usagi Tsukino anime", "Booette anime", "Sakura Haruno anime", "Itachi Uchiha anime", "Schwi Dola anime", "Sumi Sakurasawa anime", "Senko anime", "Hisoka anime", "Kirari Momobami anime", "Eijirou Kirishima anime", "Elizabeth Liones anime", "Aiz Wallenstein anime", "DIO anime", "Hawks anime", "Nagatoro-san anime", "Sasuke Uchiha anime", "Doge anime", "Mirai Kuriyama anime", "Orochimaru anime", "Eru Chitanda anime", "Nobara Kugisakic anime", "Misa Amane anime", "Chitoge Kirisaki anime", "Inosuke Hashibira anime", "Ruka Sarashina anime", "Jolyne Cujoh anime", "Fubuki anime", "Grell Sutcliff anime", "Mt. Lady anime", "Mine anime", "Hana Uzaki anime", "Gon Freecss anime", "Kanae Kochou anime", "Ririka Momobami anime", "Yui Hirasawa anime", "Wiz anime", "Yuu Nishinoya anime", "Kyouko Hori anime", "Roronoa Zoro anime", "Ymir anime", "Tetsurou Kuroo anime", "Alluka Zoldyck anime", "Ichika Nakano anime", "Jotaro Kujo anime", "Yunyun anime", "Yato anime", "Yuuji Itadori anime", "Kaede Azusagawa anime", "Koneko Toujou anime", "Yui Yuigahama anime", "Koutarou Bokuto anime", "Sagiri Izumi anime", "Shinoa Hiiragi anime", "Maki Oze anime", "Noelle Silva anime", "Mio Akiyama anime", "Godzilla anime", "Kei Tsukishima anime", "Yoko Littner anime", "Diane anime", "Pieck Finger anime", "Denki Kaminari anime", "Megumi Fushiguro anime", "Yuuki Konno anime", "Nene Yashiro anime", "Black Hanekawa anime", "Runa Yomozuki anime", "Juvia Lockser anime", "Shouta Aizawa anime", "Leafa anime", "Miia anime", "Mei Misaki anime"]
+            const animecharname = ["Lelouch Lamperouge anime", "Monkey D. Luffy anime", "L Lawliet  anime", "Levi anime", "Light Yagami  anime", "Roronoa Zoro anime", "Naruto Uzumaki  anime", "Edward Elric  anime", "Killua Zoldyck  anime", "Rintarou Okabe anime", "Kurisu Makis anime", "Itachi Uchiha  anime", "Rem anime", "Gintoki Sakata  anime", "Hachiman Hikigaya anime", "Eren Yeager  anime", "Mikasa Ackerman  anime", "Emilia anime", "Guts anime", "Saitama anime", "Kazuto Kirigaya  anime", "Todoroki Shouto anime", "Kakashi Hatake anime", "Kaneki Ken anime", "Spike Spiegel anime", "Sanji anime", "Son Gokuu anime", "Nico Robin anime", "Yato anime", "Fujiwara Chika anime", "Taiga Aisaka  anime", "Hisoka anime", "Asuna Yuuki  anime", "Sasuke Uchiha anime", "Megumin anime", "Hitagi Senjougahara anime", "Zero Two anime", "Ichigo anime", "Tanjirou Kamado anime", "Shinomiya Kaguya anime", "Roy Mustang  anime", "Joestar Joseph anime", "Saber anime", "Kamina anime", "Yuno Gasai  anime", "Shinobu Oshino anime", "Yukino Yukinoshita anime", "Gojou Satoru anime", "Yuu Ishigami  anime", "Mai Sakurajima anime", "Kurosaki  anime", "Osamu Dazai  anime", "Onizuka Eikichi anime", "Izuku Midoriya  anime", "Alucard anime", "Nezuko anime", "Koyomi Araragi anime", "Holo anime", "Zenitsu Agatsuma  anime", "Kurumi Tokisaki anime", "​Zero Two anime", "Rem anime", "Megumin anime", "Mai Sakurajima anime", "Nezuko Kamado anime", "Mikasa Ackerman anime", "Asuna anime", "Rias Gremory anime", "Hange Zoë anime", "Chika Fujiwara anime", "Yumeko Jabami anime", "Emilia anime", "Bongo Cat anime", "Aqua anime", "Violet Evergarden anime", "Albedo anime", "Akame anime", "Shinobu Kochou anime", "Levi anime", "Himiko Toga anime", "Kaguya Shinomiya anime", "Ram anime", "Miku Nakano anime", "Rin Tohsaka anime", "Shiro anime", "Kanna Kamui anime", "Akeno Himejima anime", "Ai Hayasaka anime", "Hinata Hyuuga anime", "Raphtalia anime", "Kurumi Tokisaki anime", "Rikka Takanashi anime", "Satoru Gojou anime", "Esdeath anime", "Sinon anime", "Nami anime", "Darkness anime", "Neferpitou anime", "Shoto Todoroki anime", "Nino Nakano anime", "Killua Zoldyck anime", "Tohru anime", "Ochako Uraraka anime", "Chizuru Ichinose anime", "Katsuki Bakugou anime", "Erza Scarlet anime", "Nyan Cat anime", "Kurisu Makise anime", "Taiga Aisaka anime", "Ryuuko Matoi anime", "Asuka Langley Soryu anime", "Eren Jaeger anime", "C.C. anime", "Truck-kun anime", "Shouko Nishimiya anime", "Annie Leonhart anime", "Momo Yaoyorozu anime", "Osamu Dazai anime", "Kaori Miyazono anime", "Sasha Braus anime", "Mitsuri Kanroji anime", "Gawr Gura anime", "Kanao Tsuyuri anime", "Yuno Gasai anime", "Mary Saotome anime", "Nico Robin anime", "Tsuyu Asui anime", "Hestia anime", "Touka Kirishima anime", "Shinobu Oshino anime", "Lucy Heartfilia anime", "Tanjirou Kamado anime", "Krista Lenz anime", "Alice Synthesis Thirty anime", "Izuku Midoriya anime", "Erina Nakiri anime", "Rei Ayanami anime", "Yukino Yukinoshita anime", "Giyuu Tomioka anime", "Mitsuha Miyamizu anime", "Jibril anime", "Echidna anime", "Bowsette anime", "Dabi anime", "Ichigo anime", "Lucoa anime", "Ken Kaneki anime", "Tobio Kageyama anime", "Crona anime", "Nao Tomori anime", "Kenma Kozume anime", "Hitagi Senjougahara anime", "Itsuki Nakano anime", "Tooru Oikawa anime", "Tatsumaki anime", "Armin Arlert anime", "Eri anime", "Nejire Hadou anime", "Tanya Degurechaff anime", "Boa Hancock anime", "Shouyou Hinata anime", "Mashiro Shiina anime", "Tsunade anime", "Tamaki Kotatsu anime", "Rio Futaba anime", "Yotsuba Nakano anime", "Komi Shouko anime", "Kurapika anime", "Kyouka Jirou anime", "Midnight anime", "Zenitsu Agatsuma anime", "Nanika anime", "Naruto Uzumaki anime", "Emma anime", "Monkey D. Luffy anime", "Hanako-kun anime", "Kakashi Hatake anime", "Mina Ashido anime", "L anime", "Alice Nakiri anime", "Inugami Korone anime", "Mirko anime", "Usagi Tsukino anime", "Booette anime", "Sakura Haruno anime", "Itachi Uchiha anime", "Schwi Dola anime", "Sumi Sakurasawa anime", "Senko anime", "Hisoka anime", "Kirari Momobami anime", "Eijirou Kirishima anime", "Elizabeth Liones anime", "Aiz Wallenstein anime", "DIO anime", "Hawks anime", "Nagatoro-san anime", "Sasuke Uchiha anime", "Doge anime", "Mirai Kuriyama anime", "Orochimaru anime", "Eru Chitanda anime", "Nobara Kugisakic anime", "Misa Amane anime", "Chitoge Kirisaki anime", "Inosuke Hashibira anime", "Ruka Sarashina anime", "Jolyne Cujoh anime", "Fubuki anime", "Grell Sutcliff anime", "Mt. Lady anime", "Mine anime", "Hana Uzaki anime", "Gon Freecss anime", "Kanae Kochou anime", "Ririka Momobami anime", "Yui Hirasawa anime", "Wiz anime", "Yuu Nishinoya anime", "Kyouko Hori anime", "Roronoa Zoro anime", "Ymir anime", "Tetsurou Kuroo anime", "Alluka Zoldyck anime", "Ichika Nakano anime", "Jotaro Kujo anime", "Yunyun anime", "Yato anime", "Yuuji Itadori anime", "Kaede Azusagawa anime", "Koneko Toujou anime", "Yui Yuigahama anime", "Koutarou Bokuto anime", "Sagiri Izumi anime", "Shinoa Hiiragi anime", "Maki Oze anime", "Noelle Silva anime", "Mio Akiyama anime", "Godzilla anime", "Kei Tsukishima anime", "Yoko Littner anime", "Diane anime", "Pieck Finger anime", "Denki Kaminari anime", "Megumi Fushiguro anime", "Yuuki Konno anime", "Nene Yashiro anime", "Black Hanekawa anime", "Runa Yomozuki anime", "Juvia Lockser anime", "Shouta Aizawa anime", "Leafa anime", "Miia anime", "Mei Misaki anime"]
                 // eslint-disable-next-line no-case-declarations
-                const indexanimecharname = Math.floor(Math.random() * animecharname.length);
+            const indexanimecharname = Math.floor(Math.random() * animecharname.length);
                 // eslint-disable-next-line no-case-declarations
-                const taggedusername = animecharname[indexanimecharname];
+            const taggedusername = animecharname[indexanimecharname];
                 // eslint-disable-next-line no-case-declarations
-                const forasinglehumantaggeduser = taggedusername.slice(0,-6);
-                st = animecharname[indexanimecharname];
-                doing = [`**${ourname}** and **${taggeduser}** is thinking about **${forasinglehumantaggeduser}**`];
-                asinglehuman = [`${ourname} is thinking about ${forasinglehumantaggeduser}`]; 
-                limit = 5;
-                break;
+            const forasinglehumantaggeduser = taggedusername.slice(0,-6);
+            st = animecharname[indexanimecharname];
+            doing = [`**${ourname}** and **${taggeduser}** is thinking about **${forasinglehumantaggeduser}**`];
+            asinglehuman = [`${ourname} is thinking about ${forasinglehumantaggeduser}`]; 
+            limit = 5;
+            break;
 
             default:
                 
