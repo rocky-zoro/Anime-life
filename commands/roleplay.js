@@ -527,7 +527,7 @@ module.exports = {
                 st = "anime wait"
                 limit = 8;
                 doing = [`I shall wait ${taggeduser}`]
-                asinglehuman [`I'll be waiting`]
+                asinglehuman = [`I'll be waiting`]
                 break; 
             case "sweat":
                 st = "anime sweat"
