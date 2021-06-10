@@ -465,19 +465,19 @@ module.exports = {
             case "die":
                 
                 // eslint-disable-next-line no-case-declarations
-                let searchterm = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
+                let searchtermz = ["anime punch", "anime kick", "anime shoot", "anime choke", "kamehameha"]
                 // eslint-disable-next-line no-case-declarations
-                let limitno = [14,14,15,20,15]
+                let limitnoz = [14,14,15,20,15]
                 // eslint-disable-next-line no-case-declarations
-                let doingarray = [`${ourname} just killed ${taggeduser} with an awesome punch`, `${ourname} killed ${taggeduser} with an ultimate kick`, `${ourname} just shot ${taggeduser}`, `${taggeduser} choked to death by ${ourname}`, `${ourname} just killed ${taggeduser} with an awesome kamehameha`]
+                let doingarrayz = [`${ourname} just killed ${taggeduser} with an awesome punch`, `${ourname} killed ${taggeduser} with an ultimate kick`, `${ourname} just shot ${taggeduser}`, `${taggeduser} choked to death by ${ourname}`, `${ourname} just killed ${taggeduser} with an awesome kamehameha`]
                 // eslint-disable-next-line no-case-declarations
-                let asinglehumanarray = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`]
+                let asinglehumanarrayz = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`]
                 // eslint-disable-next-line no-case-declarations
-                const indexsearchterm = Math.floor(Math.random() * searchterm.length);
-                st = searchterm[indexsearchterm];
-                limit = limitno[indexsearchterm];
-                doing = [`${doingarray[indexsearchterm]}`];
-                asinglehuman = [`${asinglehumanarray[indexsearchterm]}`];
+                const indexsearchtermz = Math.floor(Math.random() * searchterm.length);
+                st = searchtermz[indexsearchtermz];
+                limit = limitnoz[indexsearchtermz];
+                doing = [`${doingarrayz[indexsearchtermz]}`];
+                asinglehuman = [`${asinglehumanarrayz[indexsearchtermz]}`];
                 break;     
                
             case "phew":
