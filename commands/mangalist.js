@@ -111,58 +111,63 @@ module.exports = {
         const next = msg.createReactionCollector(previousembed,{time:900000, dispose: true})
 
 
-        next.on("collect", async () => {
+        previous.on("collect", async () => {
 
-            page = page + 1;
-            msg.edit(pages[page]);
-            console.log(page)
-            if (page === 7){
-                page=0
-                msg.edit(pages[page])
+            if(page > 0){
 
+                page = page-1;
+
+            } else{
+                page = pages.length-1;
             }
+            msg.edit(pages[page]);
 
         })
-        next.on("remove",async () =>{
+        previous.on("remove",async () =>{
 
-            page = page + 1;
-            msg.edit(pages[page]);
-            console.log(page)
-            if (page === 7){
-                page=0
-                msg.edit(pages[page])
+            
+            if(page > 0){
 
+                page = page-1;
+
+            } else{
+                page = pages.length-1;
             }
+
+
+            msg.edit(pages[page]);
+
 
         })
 
+        next.on("collect",async () => {
+
+            if (page+1<pages.length){
+                page = page+1;
+
+            } else{
+                page=0;
+            }
+
+            msg.edit(pages[page]);
+
+
+        })
         
-    previous.on("collect",async () => {
-        page = page - 1;
-        msg.edit(pages[page]);
-        console.log(page)
-        if (page === -1){
-            page=6
-            msg.edit(pages[page])
+        next.on("remove",async () => {
 
-        }
+            if (page+1<pages.length){
+                page = page+1;
+
+            } else{
+                page=0;
+            }
+
+            msg.edit(pages[page]);
 
 
-    })
-    
-    previous.on("remove",async () => {
+        })
 
-        page = page - 1;
-        msg.edit(pages[page]);
-        console.log(page)
-        if (page === -1){
-            page=6
-            msg.edit(pages[page])
-
-        }
-        
-
-    })
 
 
 
