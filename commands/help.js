@@ -135,7 +135,6 @@ module.exports = {
 
             page = page + 1;
             msg.edit(pages[page]);
-            console.log(page)
             if (page === 6){
                 page=0
                 msg.edit(pages[page])
@@ -147,7 +146,6 @@ module.exports = {
 
             page = page + 1;
             msg.edit(pages[page]);
-            console.log(page)
             if (page === 6){
                 page=0
                 msg.edit(pages[page])
@@ -159,7 +157,6 @@ module.exports = {
         previous.on("collect",async () => {
             page = page - 1;
             msg.edit(pages[page]);
-            console.log(page)
             if (page === -1){
                 page=5
                 msg.edit(pages[page])
@@ -173,7 +170,6 @@ module.exports = {
 
             page = page - 1;
             msg.edit(pages[page]);
-            console.log(page)
             if (page === -1){
                 page=4
                 msg.edit(pages[page])
