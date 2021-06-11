@@ -9,8 +9,8 @@ module.exports = {
 
         try {
 
-        let note = args.join(" ").trim().split(" ",50);
-        if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp Kawaii `, `?roleplay Pat`");
+        let note = args.join(" ").trim().split(" ",101);
+        if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp kawaii `, `?roleplay pat`");
         
         let beauseof = ". "+ note.slice(2,100).join(" ");
         let taggeduser;
@@ -473,7 +473,7 @@ module.exports = {
                 // eslint-disable-next-line no-case-declarations
                 let asinglehumanarrayz = [`Anili just killed ${ourname} with an awesome punch`, `Anili killed ${ourname} with an ultimate kick`, `Anili just shot ${ourname}`, `${ourname} choked to death by Anili`, `Anili just killed ${ourname} with an awesome kamehameha`]
                 // eslint-disable-next-line no-case-declarations
-                const indexsearchtermz = Math.floor(Math.random() * searchterm.length);
+                const indexsearchtermz = Math.floor(Math.random() * searchtermz.length);
                 st = searchtermz[indexsearchtermz];
                 limit = limitnoz[indexsearchtermz];
                 doing = [`${doingarrayz[indexsearchtermz]}`];
