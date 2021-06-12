@@ -104,7 +104,7 @@ module.exports = {
                 st = 'tch';
                 doing = [`${ourname} is annoyed by ${taggeduser}`,`${ourname} is displeased by ${taggeduser}`];
                 asinglehuman = [`${ourname} is getting mad`];
-                limit = 4;
+                limit = 2;
                 break;
 
             case 'hug':
