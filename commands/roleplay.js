@@ -9,10 +9,9 @@ module.exports = {
 
         try {
 
-        let note = args.join(" ").trim().split(" ",101);
-        if(!note[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp kawaii `, `?roleplay pat`");
+        if(!args[0]) return message.channel.send("That was incorrect mate. Do it in this manner.\nE.g.-`?rp kawaii `, `?roleplay pat`");
         
-        let beauseof = ". "+ note.slice(2,100).join(" ");
+        let beauseof = ". "+ args.slice(2,100).join(" ");
         let taggeduser;
         let taggedsomeoneornot = "yes";
         let st,limit;
@@ -22,15 +21,15 @@ module.exports = {
 
         
         
-        if (!note[1] || note[1]==="no-one" || note[1] === "me") {
+        if (!args[1] || args[1]==="no-one" || args[1] === "me") {
 
             taggedsomeoneornot = "no";
 
-        } else if (note[1].startsWith('<@') && note[1].endsWith('>')) {
+        } else if (args[1].startsWith('<@') && args[1].endsWith('>')) {
             
             try{
 
-                    let mention = note[1].slice(2,-1)
+                    let mention = args[1].slice(2,-1)
 
                 if (mention.startsWith('!')) {
 
@@ -49,11 +48,11 @@ module.exports = {
             
             }
         
-        } else if (note[1].match(/^[0-9]+$/)) {
+        } else if (args[1].match(/^[0-9]+$/)) {
             
             try{
 
-                const infotaggeduser = await message.guild.members.fetch(note[1]);
+                const infotaggeduser = await message.guild.members.fetch(args[1]);
                 taggeduser = infotaggeduser.displayName;
 
             } catch {
@@ -64,18 +63,18 @@ module.exports = {
             
             }
 
-        } else if (note[1].startsWith('-')) {
+        } else if (args[1].startsWith('-')) {
 
-                const someonetheywanttoadd = note[1].slice(1,50);
+                const someonetheywanttoadd = args[1].slice(1,50);
                 taggeduser = someonetheywanttoadd;  //Please instead of space use _______ underscore okay.
             
-        } else if (note[1] === "?anime") {
+        } else if (args[1] === "?anime") {
             
                 const animecharactersname = ["Lelouch Lamperouge", "Monkey D. Luffy", "L Lawliet", "Levi", "Light Yagami", "Roronoa Zoro", "Naruto ", "Edward Elric", "Killua Zoldyck", "Rintarou Okabe", "Kurisu Makis", "Itachi Uchiha", "Rem", "Gintoki Sakata", "Hachiman Hikigaya", "Eren Yeager", "Mikasa Ackerman", "Emilia", "Guts", "Saitama", "Kazuto Kirigaya", "Todoroki Shouto", "Kakashi Hatake", "Kaneki Ken", "Spike Spiegel", "Sanji", "Son Gokuu", "Nico Robin", "Yato", "Fujiwara Chika", "Taiga Aisaka", "Hisoka", "Asuna Yuuki", "Sasuke Uchiha", "Megumin", "Hitagi Senjougahara", "Zero Two", "Ichigo", "Tanjirou Kamado", "Shinomiya Kaguya", "Roy Mustang", "Joestar Joseph", "Saber", "Kamina", "Yuno Gasai", "Shinobu Oshino", "Yukino Yukinoshita", "Gojou Satoru", "Yuu Ishigami", "Mai Sakurajima", "Kurosaki", "Osamu Dazai", "Onizuka Eikichi", "Izuku Midoriya", "Alucard", "Nezuko", "Koyomi Araragi", "Holo Anime", "Zenitsu Agatsuma", "Kurumi Tokisaki", "​Zero Two", "Rem", "Megumin", "Mai Sakurajima", "Nezuko Kamado", "Mikasa Ackerman", "Asuna", "Rias Gremory", "Hange Zoë", "Chika Fujiwara", "Yumeko Jabami", "Emilia", "Bongo Cat", "Aqua", "Violet Evergarden", "Albedo", "Akame", "Shinobu Kochou", "Levi", "Himiko Toga", "Kaguya Shinomiya", "Ram", "Miku Nakano", "Rin Tohsaka", "Shiro", "Kanna Kamui", "Akeno Himejima", "Ai Hayasaka", "Hinata Hyuuga", "Raphtalia", "Kurumi Tokisaki", "Rikka Takanashi", "Satoru Gojou", "Esdeath", "Sinon", "Nami", "Darkness", "Neferpitou", "Shoto Todoroki", "Nino Nakano", "Killua Zoldyck", "Tohru", "Ochako Uraraka", "Chizuru Ichinose", "Katsuki Bakugou", "Erza Scarlet", "Nyan Cat", "Kurisu Makise", "Taiga Aisaka", "Ryuuko Matoi", "Asuka Langley Soryu", "Eren Jaeger", "C.C.", "Truck-kun", "Shouko Nishimiya", "Annie Leonhart", "Momo Yaoyorozu", "Osamu Dazai", "Kaori Miyazono", "Sasha Braus", "Mitsuri Kanroji", "Gawr Gura", "Kanao Tsuyuri", "Yuno Gasai", "Mary Saotome", "Nico Robin", "Tsuyu Asui", "Hestia", "Touka Kirishima", "Shinobu Oshino", "Lucy Heartfilia", "Tanjirou Kamado", "Krista Lenz", "Alice Synthesis Thirty", "Izuku Midoriya", "Erina Nakiri", "Rei Ayanami", "Yukino Yukinoshita", "Giyuu Tomioka", "Mitsuha Miyamizu", "Jibril", "Echidna", "Bowsette", "Dabi", "Ichigo", "Lucoa", "Ken Kaneki", "Tobio Kageyama", "Crona", "Nao Tomori", "Kenma Kozume", "Hitagi Senjougahara", "Itsuki Nakano", "Tooru Oikawa", "Tatsumaki", "Armin Arlert", "Eri", "Nejire Hadou", "Tanya Degurechaff", "Boa Hancock", "Shouyou Hinata", "Mashiro Shiina", "Tsunade", "Tamaki Kotatsu", "Rio Futaba", "Yotsuba Nakano", "Komi Shouko", "Kurapika", "Kyouka Jirou", "Midnight", "Zenitsu Agatsuma", "Nanika", "Naruto", "Emma", "Monkey D. Luffy", "Hanako-kun", "Kakashi Hatake", "Mina Ashido", "L", "Alice Nakiri", "Inugami Korone", "Mirko", "Usagi Tsukino", "Booette", "Sakura Haruno", "Itachi Uchiha", "Schwi Dola", "Sumi Sakurasawa", "Senko", "Hisoka", "Kirari Momobami", "Eijirou Kirishima", "Elizabeth Liones", "Aiz Wallenstein", "DIO", "Hawks", "Nagatoro-san", "Sasuke Uchiha", "Doge", "Mirai Kuriyama", "Orochimaru", "Eru Chitanda", "Nobara Kugisakic", "Misa Amane", "Chitoge Kirisaki", "Inosuke Hashibira", "Ruka Sarashina", "Jolyne Cujoh", "Fubuki", "Grell Sutcliff", "Mt. Lady", "Mine", "Hana Uzaki", "Gon Freecss", "Kanae Kochou", "Ririka Momobami", "Yui Hirasawa", "Wiz", "Yuu Nishinoya", "Kyouko Hori", "Roronoa Zoro", "Ymir", "Tetsurou Kuroo", "Alluka Zoldyck", "Ichika Nakano", "Jotaro Kujo", "Yunyun", "Yato", "Yuuji Itadori", "Kaede Azusagawa", "Koneko Toujou", "Yui Yuigahama", "Koutarou Bokuto", "Sagiri Izumi", "Shinoa Hiiragi", "Maki Oze", "Noelle Silva", "Mio Akiyama", "Godzilla", "Kei Tsukishima", "Yoko Littner", "Diane", "Pieck Finger", "Denki Kaminari", "Megumi Fushiguro", "Yuuki Konno", "Nene Yashiro", "Black Hanekawa", "Runa Yomozuki", "Juvia Lockser", "Shouta Aizawa", "Leafa", "Miia", "Mei Misaki"]
                 const indexanimecharactersname = Math.floor(Math.random() * animecharactersname.length);
                 taggeduser = animecharactersname[indexanimecharactersname];
                
-        } else if (note[1] === "?random") {
+        } else if (args[1] === "?random") {
 
                 const randomcharactersname = ["Elon Musk", "Lionel Messi","Sylvester Stallone", "PewDiePie" ,"Barack Obama", "Drake", "Shaquille O'Neal", "John Cena", "Leonardo DiCapiro", "Usain Bolt", "Pelé", "Morgan Freeman", "Katy Perry", "Tom Hanks", "Taylor Swift", "Freddie Mercury", "Albert Einstein", "Jay-Z", "Eminem", "Donald Trump", "Jackie Chan", "Princess Diana", "Tom Cruise", "Muhammad Ali", "Madonna", "Rihanna", "Jesus Christ", "Arnold Schwarzenegger", "Michael Jordan", "Bruce Lee", "Will Smith", "Kanye West", "Elvis Presley", "Beyonce", "Oprah" ,"Michael Jackson", "Batman", "Superman", "Naruto", "Luffy", "Levi", "Itachi Uchiha", "Zoro", "Cristiano Ronaldo","Stephen Hawking", "The Undertaker", "Robert Downey Jr", "Justin Bieber", "Lelouch Lamperouge", "Monkey D. Luffy", "L Lawliet", "Levi", "Light Yagami", "Roronoa Zoro", "Naruto", "Edward Elric", "Killua Zoldyck", "Rintarou Okabe", "Kurisu Makis", "Itachi Uchiha", "Rem", "Gintoki Sakata", "Hachiman Hikigaya", "Eren Yeager", "Mikasa Ackerman", "Emilia", "Guts", "Saitama", "Kazuto Kirigaya", "Todoroki Shouto", "Kakashi Hatake", "Kaneki Ken", "Spike Spiegel", "Sanji", "Son Gokuu", "Nico Robin", "Yato", "Fujiwara Chika", "Taiga Aisaka", "Hisoka", "Asuna Yuuki", "Sasuke Uchiha", "Megumin", "Hitagi Senjougahara", "Zero Two", "Ichigo", "Tanjirou Kamado", "Shinomiya Kaguya", "Roy Mustang", "Joestar Joseph", "Saber", "Kamina", "Yuno Gasai", "Shinobu Oshino", "Yukino Yukinoshita", "Gojou Satoru", "Yuu Ishigami", "Mai Sakurajima", "Kurosaki", "Osamu Dazai", "Onizuka Eikichi", "Izuku Midoriya", "Alucard", "Nezuko", "Koyomi Araragi", "Holo Anime", "Zenitsu Agatsuma", "Kurumi Tokisaki", "​Zero Two", "Rem", "Megumin", "Mai Sakurajima", "Nezuko Kamado", "Mikasa Ackerman", "Asuna", "Rias Gremory", "Hange Zoë", "Chika Fujiwara", "Yumeko Jabami", "Emilia", "Bongo Cat", "Aqua", "Violet Evergarden", "Albedo", "Akame", "Shinobu Kochou", "Levi", "Himiko Toga", "Kaguya Shinomiya", "Ram", "Miku Nakano", "Rin Tohsaka", "Shiro", "Kanna Kamui", "Akeno Himejima", "Ai Hayasaka", "Hinata Hyuuga", "Raphtalia", "Kurumi Tokisaki", "Rikka Takanashi", "Satoru Gojou", "Esdeath", "Sinon", "Nami", "Darkness", "Neferpitou", "Shoto Todoroki", "Nino Nakano", "Killua Zoldyck", "Tohru", "Ochako Uraraka", "Chizuru Ichinose", "Katsuki Bakugou", "Erza Scarlet", "Nyan Cat", "Kurisu Makise", "Taiga Aisaka", "Ryuuko Matoi", "Asuka Langley Soryu", "Eren Jaeger", "C.C.", "Truck-kun", "Shouko Nishimiya", "Annie Leonhart", "Momo Yaoyorozu", "Osamu Dazai", "Kaori Miyazono", "Sasha Braus", "Mitsuri Kanroji", "Gawr Gura", "Kanao Tsuyuri", "Yuno Gasai", "Mary Saotome", "Nico Robin", "Tsuyu Asui", "Hestia", "Touka Kirishima", "Shinobu Oshino", "Lucy Heartfilia", "Tanjirou Kamado", "Krista Lenz", "Alice Synthesis Thirty", "Izuku Midoriya", "Erina Nakiri", "Rei Ayanami", "Yukino Yukinoshita", "Giyuu Tomioka", "Mitsuha Miyamizu", "Jibril", "Echidna", "Bowsette", "Dabi", "Ichigo", "Lucoa", "Ken Kaneki", "Tobio Kageyama", "Crona", "Nao Tomori", "Kenma Kozume", "Hitagi Senjougahara", "Itsuki Nakano", "Tooru Oikawa", "Tatsumaki", "Armin Arlert", "Eri", "Nejire Hadou", "Tanya Degurechaff", "Boa Hancock", "Shouyou Hinata", "Mashiro Shiina", "Tsunade", "Tamaki Kotatsu", "Rio Futaba", "Yotsuba Nakano", "Komi Shouko", "Kurapika", "Kyouka Jirou", "Midnight", "Zenitsu Agatsuma", "Nanika", "Naruto", "Emma", "Monkey D. Luffy", "Hanako-kun", "Kakashi Hatake", "Mina Ashido", "L", "Alice Nakiri", "Inugami Korone", "Mirko", "Usagi Tsukino", "Booette", "Sakura Haruno", "Itachi Uchiha", "Schwi Dola", "Sumi Sakurasawa", "Senko", "Hisoka", "Kirari Momobami", "Eijirou Kirishima", "Elizabeth Liones", "Aiz Wallenstein", "DIO", "Hawks", "Nagatoro-san", "Sasuke Uchiha", "Doge", "Mirai Kuriyama", "Orochimaru", "Eru Chitanda", "Nobara Kugisakic", "Misa Amane", "Chitoge Kirisaki", "Inosuke Hashibira", "Ruka Sarashina", "Jolyne Cujoh", "Fubuki", "Grell Sutcliff", "Mt. Lady", "Mine", "Hana Uzaki", "Gon Freecss", "Kanae Kochou", "Ririka Momobami", "Yui Hirasawa", "Wiz", "Yuu Nishinoya", "Kyouko Hori", "Roronoa Zoro", "Ymir", "Tetsurou Kuroo", "Alluka Zoldyck", "Ichika Nakano", "Jotaro Kujo", "Yunyun", "Yato", "Yuuji Itadori", "Kaede Azusagawa", "Koneko Toujou", "Yui Yuigahama", "Koutarou Bokuto", "Sagiri Izumi", "Shinoa Hiiragi", "Maki Oze", "Noelle Silva", "Mio Akiyama", "Godzilla", "Kei Tsukishima", "Yoko Littner", "Diane", "Pieck Finger", "Denki Kaminari", "Megumi Fushiguro", "Yuuki Konno", "Nene Yashiro", "Black Hanekawa", "Runa Yomozuki", "Juvia Lockser", "Shouta Aizawa", "Leafa", "Miia", "Mei Misaki", "Oprah", "Beyoncé", "Muhammad Ali", "Princess Diana", "Tom Cruise", "Madonna", "David Bowie", "Rihanna", "John Lennon", "Jesus Christ", "Marilyn Monroe", "George Clooney", "Cher", "Brad Pitt", "Leonardo DiCaprio", "Jack Nicholson", "Prince", "Arnold Schwarzenegger", "Lady Gaga", "Elizabeth Taylor", "Jennifer Lopez", "Joan of Arc", "Michael Jordan", "Bruce Lee", "Ariana Grande", "Will Smith", "Napoleon Bonaparte", "Aretha Franklin", "Kanye West", "Elvis", "Paul Newman", "Drake", "Tom Hanks", "Nicolas Cage", "Michelle Obama", "James Dean", "David Beckham", "Meryl Streep", "Jane Fonda", "Frederick Douglass", "Shaquille O’Neal", "Michael J. Fox", "Mariah Carey", "Dwayne Johnson", "Diplo", "Sophie Turner", "Joan Didion", "Cara Delevingne", "Guy Fieri", "Jamie Foxx"]
                 const indexrandomcharactersname = Math.floor(Math.random() * randomcharactersname.length)
@@ -97,7 +96,7 @@ module.exports = {
         
         
         
-            switch(note[0]){
+            switch(args[0]){
 
             case 'tch':
 
