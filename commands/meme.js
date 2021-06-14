@@ -206,7 +206,7 @@ module.exports = {
     
             context.font = f;
             context.fillStyle = fc;
-            inputtext(context, use_text, text_x, text_y, text_w, text_h)
+            inputText(context, use_text, text_x, text_y, text_w, text_h)
             
             const attachment = new discord.MessageAttachment(canvas.toBuffer(), '1.png');
             message.channel.send(attachment)
