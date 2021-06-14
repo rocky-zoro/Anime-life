@@ -173,7 +173,7 @@ module.exports = {
             context.fillStyle = fc;
             context.fillText(dname, 550, 295, 100);
     
-            const attachment = new discord.MessageAttachment(canvas.toBuffer(), '1.png');
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), '1.png');
             message.channel.send(attachment)
             
         } 
@@ -191,7 +191,7 @@ module.exports = {
             const avatar = await image.loadImage(url);
             context.drawImage(avatar, x, y, w, h);
     
-            const attachment = new discord.MessageAttachment(canvas.toBuffer(), '1.png');
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), '1.png');
             message.channel.send(attachment)
             
         } 
@@ -208,7 +208,7 @@ module.exports = {
             context.fillStyle = fc;
             inputText(context, use_text, text_x, text_y, text_w, text_h)
             
-            const attachment = new discord.MessageAttachment(canvas.toBuffer(), '1.png');
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), '1.png');
             message.channel.send(attachment)
         }
         
@@ -220,7 +220,7 @@ module.exports = {
             context = canvas.getContext('2d');    
             context.drawImage(background, 0, 0, canvas.width, canvas.height)
             
-            const attachment = new discord.MessageAttachment(canvas.toBuffer(), '1.png');
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), '1.png');
             message.channel.send(attachment)
         
         }
