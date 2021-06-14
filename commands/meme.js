@@ -11,7 +11,7 @@ module.exports = {
     description:'image',
     async execute(client, message, args, Discord){
         
-        let text = args.slice(3,100).join(" ");
+        let text = args.slice(2,100).join(" ");
         //! ------------------------------------------------------------------------
         //? Fuctions used
         
