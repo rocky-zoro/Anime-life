@@ -214,8 +214,77 @@ module.exports = {
             text_w = 400;
             text_h = 42;
     
-        }
+        } else if (args[0] === 'sleep') {
 
+            text_exist = "yes";
+            image_exist = "no";
+            burl = './image/11.jpg';
+            f = '20px sans-sherif'
+            fc = "#000000"
+            cw = 512;
+            ch = 512;
+            text_x = 30; 
+            text_y = 280;
+            text_w = 210;
+            text_h = 25;
+    
+        } else if (args [0] === 'queues') {
+            
+            text_exist = "yes";
+            image_exist = "no";
+           multi_texts = "2";
+            burl = './image/12.jpg';
+            f = '900 40px sans-sherif'
+            fc = "#000000"
+            cw = 749;
+            ch = 726;
+    
+            text_x = 300; 
+            text_y = 140;
+            text_w = 180;
+            text_h = 45;
+            
+            text_x1 = 560; 
+            text_y1 = 140;
+            text_w1 = 180;
+            text_h1 = 45;
+            
+        } else if (args[0] === "classic"){
+        
+            text_exist = "no";
+            image_exist = "yes";
+            burl = './image/13.jpg';
+            w = 259;
+            h = 177;
+            x = 0;
+            y = 215;
+            cw = 259;
+            ch = 606;
+            
+        } else if (args[0] === "mario") {
+            
+            text_exist = "no";
+            image_exist = "yes";
+            burl = './image/14.jpg';
+            w = 405;
+            h = 314;
+            x = 554;
+            y = 0;
+            cw = 959;
+            ch = 606;
+        } else if (args[0] === "talk") {
+            text_exist = "yes";
+            image_exist = "no";
+            burl = './image/15.jpg';
+            f = '47px sans-sherif'
+            fc = "#ffffff"
+            cw = 1080;
+            ch = 574;
+            text_x = 639; 
+            text_y = 154;
+            text_w = 430;
+            text_h = 52;
+        }
         
         else {
         
@@ -231,13 +300,14 @@ module.exports = {
         //& Tagged User code
 
 
-        if (!args[1] || args[1]==="no-one" || args[1] === "me") {
+        if (!args[1] || args[1] === "me") {
 
             url = message.member.user.displayAvatarURL({format: 'jpg'});
             dname = message.member.displayName;            
         
         } else if (args[1].startsWith('<@') && args[1].endsWith('>')) {
-        
+            
+            try{
             let mention = args[1].slice(2,-1)
             if (mention.startsWith('!')) {
     
@@ -248,15 +318,24 @@ module.exports = {
 
             dname = infotaggeduser.displayName;
             url = infotaggeduser.user.avatarURL({format: 'jpg'},{dynamic:true});
-        
+            }  catch {
+                message.channel.send ("Please use a valid Tag");
+            }
+
         } else if (args[1].match(/^[0-9]+$/) && args[1].length >16 && args[1].length <20) {
             
-            const infotaggeduser = await message.guild.members.fetch(args[1]);
-
-            url = infotaggeduser.user.avatarURL({format: 'jpg'},{dynamic:true});
+            try{   
             
-            dname = infotaggeduser.displayName;
+                const infotaggeduser = await message.guild.members.fetch(args[1]);
 
+                url = infotaggeduser.user.avatarURL({format: 'jpg'},{dynamic:true});
+            
+                dname = infotaggeduser.displayName;
+
+            } catch {
+            
+                message.channel.send ("Please use a valid Tag");
+            }
 
         } else {
 
@@ -325,6 +404,12 @@ module.exports = {
             context.fillStyle = fc;
             if(multi_texts === "1"){
             inputText(context, use_text, text_x, text_y, text_w, text_h)
+            } else if (multi_texts === "2"){
+        
+                inputtext(context, multi_text[0], text_x, text_y, text_w, text_h)
+            
+                inputtext(context, multi_text[1], text_x1, text_y1, text_w1, text_h1)
+            
             }
             else if (multi_texts === "4"){
                 
