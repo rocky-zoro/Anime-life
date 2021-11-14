@@ -533,7 +533,13 @@ module.exports = {
                 limit = 14;
                 doing = [`Trying my best ${taggeduser}`]
                 asinglehuman = [`Yeah you are right hehe`]
-                break; 
+                break;
+            case "sex":
+                st = "sex"
+                limit = 20
+                doing = [`Fucking ${taggeduser}`]
+                asinglehuman = [`Fucking myself`]
+                break;
                                         
                                                                                                                                                                                                     
             case "?anime":
