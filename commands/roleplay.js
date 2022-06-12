@@ -187,6 +187,14 @@ module.exports = {
                 asinglehuman =[`${ourname} is furious at the moment`]
                 limit = 50;
                     break;
+            
+            case "angry":
+                
+                st='shut up meg'
+                doing = [`Shut up Meg`]
+                asinglehuman =[`Shut up Meg`]
+                limit = 5;
+                    break;
                     
             case "nuzzle":
                 
