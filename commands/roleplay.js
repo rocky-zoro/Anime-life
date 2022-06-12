@@ -188,7 +188,7 @@ module.exports = {
                 limit = 50;
                     break;
             
-            case "angry":
+            case "meg":
                 
                 st='shut up meg'
                 doing = [`Shut up Meg`]
